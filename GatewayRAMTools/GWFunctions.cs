@@ -17,7 +17,7 @@ namespace GatewayRAMTools
 		public int headerSize; // Size of Header (Bytes)
 		public int memRegionCount; // # of Header Blocks
 		public int[][] memRegions; // Header Blocks
-		public int magicBit; // Validation Int - Now Used
+		public int magicBit; // Validation Int
 		public string magicBit0x;
 	}
 
@@ -85,7 +85,7 @@ namespace GatewayRAMTools
 					tmpres.rawsize = tmpres.memRegions [tmpres.memRegionCount - 1] [1];
 					tmpres.magicBit = (int)reader.ReadUInt32 (); // Validation Int
 					tmpres.magicBit0x = tmpres.magicBit.ToString("X8"); // Validation Hex
-					tmpres.isGateway = (tmpres.magicBit == tmpres.memRegions [tmpres.memRegionCount - 1] [3]); // Final Check Against Validation Bit
+					tmpres.isGateway = (tmpres.magicBit == tmpres.memRegions [tmpres.memRegionCount - 1] [3]); // Final Check Against Validation Int
 					if( !tmpres.isGateway ) tmpres.error = "Validation Failed";
 				}
 

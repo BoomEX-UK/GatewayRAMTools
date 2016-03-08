@@ -5,7 +5,7 @@
   </configuration>
   <import>
     <widget-library name="glade-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
-    <widget-library name="../bin/Release/GatewayRAMTools.exe" internal="true" />
+    <widget-library name="../bin/Debug/GatewayRAMTools.exe" internal="true" />
   </import>
   <widget class="Gtk.Window" id="GatewayRAMTools.MainWindow" design-size="400 300">
     <action-group name="Default">
@@ -80,7 +80,7 @@
       </action>
       <action id="AddFilesAction">
         <property name="Type">Action</property>
-        <property name="Label" translatable="yes">Add Files</property>
+        <property name="Label" translatable="yes">Add Files..</property>
         <property name="ShortLabel" translatable="yes">Add Files</property>
         <signal name="Activated" handler="OnAddFilesActionActivated" />
       </action>
