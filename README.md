@@ -18,3 +18,11 @@ The tool will allow you to view the Memory Regions which have been dumped and wh
 
 # Future Development
 I'll be looking to integrate further tools into this project, namely around pointer searching / multi layer pointer searching. Any comments / request or ideas are welcome.
+
+# Credits
+Thanks to the following people for their input into the project so far
+* Gateway 3DS Team
+* Maxconsole.com Forums
+* msparky76
+* makikatze
+* storm75x (Fort42)
