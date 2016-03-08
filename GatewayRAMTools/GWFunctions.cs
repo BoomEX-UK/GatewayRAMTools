@@ -51,7 +51,7 @@ namespace GatewayRAMTools
 				// Set memRegions
 				System.UInt32 regions = reader.ReadUInt32 ();
 				tmpres.leadIn = regions.ToString ("X8");
-				tmpres.isGateway = (regions < 100); // max 99 memRegions
+				tmpres.isGateway = (regions > 0 ) && (regions < 100); // max 99 memRegions
 				if (!tmpres.isGateway) {
 					tmpres.error = "Header Too Big";
 				} else { 

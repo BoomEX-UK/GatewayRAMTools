@@ -1,4 +1,6 @@
 ﻿using System;
+using System.IO;
+using System.Reflection;
 using System.Collections.Generic;
 using Gtk;
 
@@ -7,8 +9,9 @@ namespace GatewayRAMTools {
 	{
 		public MainWindow () : base (Gtk.WindowType.Toplevel)
 		{
-			Build ();
+			Build (); 
 			initFileList (this);
+			this.Title = string.Format (this.Title+" v{0}.{1}",Assembly.GetExecutingAssembly ().GetName ().Version.Major,Assembly.GetExecutingAssembly ().GetName ().Version.Minor);
 		}
 
 		// Simple Count If Ticked Function
@@ -263,7 +266,7 @@ namespace GatewayRAMTools {
 
 		protected void OnAboutActionActivated (object sender, EventArgs e)
 		{
-			MsgBoxInfo ("Created By: xJam.es\r\nProject Started: 20th Jan 2016\r\n--------\r\nThanks To:\r\n* The Gateway Team\r\n* Maxconsole.com Forums\r\n* msparky76\r\n* makikatze\r\n* storm75x (Fort42)");
+			MsgBoxInfo (string.Format("Created By: xJam.es\r\nProject Started: 20th Jan 2016\r\nVersion: {0}\r\n--------\r\nThanks To:\r\n* The Gateway Team\r\n* Maxconsole.com Forums\r\n* msparky76\r\n* makikatze\r\n* storm75x (Fort42)",Assembly.GetExecutingAssembly ().GetName ().Version));
 		}
 
 		protected void OnSupportActionActivated (object sender, EventArgs e)
@@ -288,11 +291,44 @@ namespace GatewayRAMTools {
 			}
 
 			if (heads.Count > 0) {
-				MessageDialog MsgBox = new MessageDialog (this, DialogFlags.Modal, MessageType.Question, ButtonsType.YesNo, string.Format ("This will export {0} RAM dump(s) totalling {1}.\r\rThey will each be saved in the same folder as the original file and labelled -raw.\r\rContinue?", heads.Count, filesizestring (tfsize)));
+				MessageDialog MsgBox = new MessageDialog (this, DialogFlags.Modal, MessageType.Question, ButtonsType.YesNo, string.Format ("This will export {0} RAM dump(s) totalling {1}.\r\rThey will each be saved in the same folder as the original file and labelled -raw. Any existing files WILL be OVERWRITTEN.\r\rContinue?", heads.Count, filesizestring (tfsize)));
 				var re = MsgBox.Run ();
 				MsgBox.Destroy ();
 				if (re == (int)ResponseType.Yes) {
-					MsgBoxInfo ("OK");
+					for (int currentHead = 0; currentHead < heads.Count; currentHead++) {
+						GWFileHeader activeDump = heads [currentHead];
+						var zeropad = new byte[1024];
+						var readbuffer = new byte[1024];
+						int bytesread = 0;
+						string outpath = System.IO.Path.GetDirectoryName(activeDump.filePath);
+						outpath += "\\" + System.IO.Path.GetFileNameWithoutExtension(activeDump.filePath);
+						outpath += "-raw" + System.IO.Path.GetExtension (activeDump.filePath);
+						// MsgBoxInfo (outpath);
+						// Read/Write
+						using (FileStream filer = File.OpenRead (activeDump.filePath)) {
+							using (FileStream filew = File.Create (outpath)) {
+								filer.Seek (activeDump.headerSize,0);
+								for (int currentRegion = 0; currentRegion <activeDump.memRegionCount; currentRegion++) {
+									while (filew.Position < activeDump.memRegions [currentRegion] [0]) {
+										int thischunk = (int)(activeDump.memRegions [currentRegion] [0] - filew.Position);
+										if (thischunk > zeropad.Length)	thischunk = zeropad.Length;
+										filew.Write (zeropad, 0, thischunk);
+									}
+									filew.Flush ();
+									while (filew.Position < activeDump.memRegions [currentRegion] [1]) {
+										int thisblock = (int)(activeDump.memRegions [currentRegion] [1]-filew.Position);
+										if (thisblock > readbuffer.Length) thisblock = readbuffer.Length;
+										bytesread = filer.Read (readbuffer, 0, thisblock);
+										filew.Write (readbuffer, 0, bytesread);
+									}
+									filew.Flush ();
+
+								}
+							} // Using File.OpenWrite
+						} // Using File.OpenRead
+
+					}
+					MsgBoxInfo ("All expanded RAM dumps have been written.");
 				}
 			} else {
 				MsgBoxInfo ("No Gateway RAM Dumps have been ticked.");
@@ -309,5 +345,11 @@ namespace GatewayRAMTools {
 			prt.generateHeaderTable (this);
 			prt.ShowAll ();
 		}
+
+		protected void OnProjectHomepageActionActivated (object sender, EventArgs e)
+		{
+			System.Diagnostics.Process.Start("https://github.com/xJam-es/GatewayRAMTools");
+		}
+
 	}
 }

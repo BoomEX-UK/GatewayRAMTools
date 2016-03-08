@@ -90,6 +90,12 @@
         <property name="ShortLabel" translatable="yes">Exit</property>
         <signal name="Activated" handler="OnExitActionActivated" />
       </action>
+      <action id="ProjectHomepageAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Project Homepage</property>
+        <property name="ShortLabel" translatable="yes">Project Homepage</property>
+        <signal name="Activated" handler="OnProjectHomepageActionActivated" />
+      </action>
     </action-group>
     <property name="MemberName" />
     <property name="Title" translatable="yes">MainWindow</property>
@@ -122,7 +128,9 @@
               </node>
               <node type="Menu" action="HelpAction">
                 <node type="Menuitem" action="AboutAction" />
+                <node type="Separator" />
                 <node type="Menuitem" action="SupportAction" />
+                <node type="Menuitem" action="ProjectHomepageAction" />
               </node>
             </node>
           </widget>

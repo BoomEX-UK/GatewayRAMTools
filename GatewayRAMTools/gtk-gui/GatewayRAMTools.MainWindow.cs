@@ -34,6 +34,8 @@ namespace GatewayRAMTools
 		
 		private global::Gtk.Action ExitAction;
 		
+		private global::Gtk.Action ProjectHomepageAction;
+		
 		private global::Gtk.VBox vbox1;
 		
 		private global::Gtk.MenuBar menubar1;
@@ -91,12 +93,15 @@ namespace GatewayRAMTools
 			this.ExportRAWRAMDumpAction = new global::Gtk.Action ("ExportRAWRAMDumpAction", global::Mono.Unix.Catalog.GetString ("Export RAW RAM Dump"), null, null);
 			this.ExportRAWRAMDumpAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("Export RAW RAM Dump");
 			w1.Add (this.ExportRAWRAMDumpAction, null);
-			this.AddFilesAction = new global::Gtk.Action ("AddFilesAction", global::Mono.Unix.Catalog.GetString ("Add Files"), null, null);
+			this.AddFilesAction = new global::Gtk.Action ("AddFilesAction", global::Mono.Unix.Catalog.GetString ("Add Files.."), null, null);
 			this.AddFilesAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("Add Files");
 			w1.Add (this.AddFilesAction, null);
 			this.ExitAction = new global::Gtk.Action ("ExitAction", global::Mono.Unix.Catalog.GetString ("Exit"), null, null);
 			this.ExitAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("Exit");
 			w1.Add (this.ExitAction, null);
+			this.ProjectHomepageAction = new global::Gtk.Action ("ProjectHomepageAction", global::Mono.Unix.Catalog.GetString ("Project Homepage"), null, null);
+			this.ProjectHomepageAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("Project Homepage");
+			w1.Add (this.ProjectHomepageAction, null);
 			this.UIManager.InsertActionGroup (w1, 0);
 			this.AddAccelGroup (this.UIManager.AccelGroup);
 			this.Name = "GatewayRAMTools.MainWindow";
@@ -107,7 +112,7 @@ namespace GatewayRAMTools
 			this.vbox1.Name = "vbox1";
 			this.vbox1.Spacing = 6;
 			// Container child vbox1.Gtk.Box+BoxChild
-			this.UIManager.AddUiFromString (@"<ui><menubar name='menubar1'><menu name='FileAction' action='FileAction'><menuitem name='AddFilesAction' action='AddFilesAction'/><separator/><menuitem name='ExitAction' action='ExitAction'/></menu><menu name='ToolsAction' action='ToolsAction'><menu name='SelectAction' action='SelectAction'><menuitem name='AllAction' action='AllAction'/><menuitem name='NoneAction' action='NoneAction'/><separator/><menuitem name='AllGatewayAction' action='AllGatewayAction'/><menuitem name='AllRAWAction' action='AllRAWAction'/></menu><separator/><menuitem name='ViewSelectedPartitionAction' action='ViewSelectedPartitionAction'/><menuitem name='ExportRAWRAMDumpAction' action='ExportRAWRAMDumpAction'/></menu><menu name='HelpAction' action='HelpAction'><menuitem name='AboutAction' action='AboutAction'/><menuitem name='SupportAction' action='SupportAction'/></menu></menubar></ui>");
+			this.UIManager.AddUiFromString (@"<ui><menubar name='menubar1'><menu name='FileAction' action='FileAction'><menuitem name='AddFilesAction' action='AddFilesAction'/><separator/><menuitem name='ExitAction' action='ExitAction'/></menu><menu name='ToolsAction' action='ToolsAction'><menu name='SelectAction' action='SelectAction'><menuitem name='AllAction' action='AllAction'/><menuitem name='NoneAction' action='NoneAction'/><separator/><menuitem name='AllGatewayAction' action='AllGatewayAction'/><menuitem name='AllRAWAction' action='AllRAWAction'/></menu><separator/><menuitem name='ViewSelectedPartitionAction' action='ViewSelectedPartitionAction'/><menuitem name='ExportRAWRAMDumpAction' action='ExportRAWRAMDumpAction'/></menu><menu name='HelpAction' action='HelpAction'><menuitem name='AboutAction' action='AboutAction'/><separator/><menuitem name='SupportAction' action='SupportAction'/><menuitem name='ProjectHomepageAction' action='ProjectHomepageAction'/></menu></menubar></ui>");
 			this.menubar1 = ((global::Gtk.MenuBar)(this.UIManager.GetWidget ("/menubar1")));
 			this.menubar1.Name = "menubar1";
 			this.vbox1.Add (this.menubar1);
@@ -182,6 +187,7 @@ namespace GatewayRAMTools
 			this.ExportRAWRAMDumpAction.Activated += new global::System.EventHandler (this.OnExportRAWDumpActionActivated);
 			this.AddFilesAction.Activated += new global::System.EventHandler (this.OnAddFilesActionActivated);
 			this.ExitAction.Activated += new global::System.EventHandler (this.OnExitActionActivated);
+			this.ProjectHomepageAction.Activated += new global::System.EventHandler (this.OnProjectHomepageActionActivated);
 			this.treeFiles.CursorChanged += new global::System.EventHandler (this.OnTreeFilesCursorChanged);
 			this.treeFiles.RowActivated += new global::Gtk.RowActivatedHandler (this.OnTreeFilesRowActivated);
 			this.btnAddFiles.Clicked += new global::System.EventHandler (this.OnBtnAddFilesClicked);
