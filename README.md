@@ -12,7 +12,7 @@ The tool will allow you to view the Memory Regions which have been dumped and wh
 # Features
 * Detect / Validate a Gateway RAM Dump
 * View Memory Region offsets and their relative in-file offsets
-* Translate In-Game offsets into In-File offsets for use with a hex editor / other tools
+* Translate In-Game offsets into In-File offsets for use with a hex editor
 * Expand a Gateway RAM dump into a full-size RAW dump by zero-padding the missing data
 * Batch-expand Gateway RAM Dumps for multiple files
 
