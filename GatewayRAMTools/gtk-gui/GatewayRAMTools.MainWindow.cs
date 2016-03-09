@@ -44,6 +44,8 @@ namespace GatewayRAMTools
 		
 		private global::Gtk.TreeView treeFiles;
 		
+		private global::Gtk.HBox hbox2;
+		
 		private global::Gtk.ProgressBar prgMain;
 		
 		private global::Gtk.HBox hbox1;
@@ -136,13 +138,20 @@ namespace GatewayRAMTools
 			global::Gtk.Box.BoxChild w4 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.GtkScrolledWindow]));
 			w4.Position = 1;
 			// Container child vbox1.Gtk.Box+BoxChild
+			this.hbox2 = new global::Gtk.HBox ();
+			this.hbox2.Name = "hbox2";
+			this.hbox2.Spacing = 6;
+			// Container child hbox2.Gtk.Box+BoxChild
 			this.prgMain = new global::Gtk.ProgressBar ();
 			this.prgMain.Name = "prgMain";
-			this.vbox1.Add (this.prgMain);
-			global::Gtk.Box.BoxChild w5 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.prgMain]));
-			w5.Position = 2;
-			w5.Expand = false;
-			w5.Fill = false;
+			this.hbox2.Add (this.prgMain);
+			global::Gtk.Box.BoxChild w5 = ((global::Gtk.Box.BoxChild)(this.hbox2 [this.prgMain]));
+			w5.Position = 0;
+			this.vbox1.Add (this.hbox2);
+			global::Gtk.Box.BoxChild w6 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.hbox2]));
+			w6.Position = 2;
+			w6.Expand = false;
+			w6.Fill = false;
 			// Container child vbox1.Gtk.Box+BoxChild
 			this.hbox1 = new global::Gtk.HBox ();
 			this.hbox1.Name = "hbox1";
@@ -156,10 +165,10 @@ namespace GatewayRAMTools
 			this.btnAddFiles.UseUnderline = true;
 			this.btnAddFiles.Label = global::Mono.Unix.Catalog.GetString ("Add Files..");
 			this.hbox1.Add (this.btnAddFiles);
-			global::Gtk.Box.BoxChild w6 = ((global::Gtk.Box.BoxChild)(this.hbox1 [this.btnAddFiles]));
-			w6.Position = 0;
-			w6.Expand = false;
-			w6.Fill = false;
+			global::Gtk.Box.BoxChild w7 = ((global::Gtk.Box.BoxChild)(this.hbox1 [this.btnAddFiles]));
+			w7.Position = 0;
+			w7.Expand = false;
+			w7.Fill = false;
 			// Container child hbox1.Gtk.Box+BoxChild
 			this.btnRemove = new global::Gtk.Button ();
 			this.btnRemove.WidthRequest = 95;
@@ -169,16 +178,16 @@ namespace GatewayRAMTools
 			this.btnRemove.UseUnderline = true;
 			this.btnRemove.Label = global::Mono.Unix.Catalog.GetString ("Remove Ticked");
 			this.hbox1.Add (this.btnRemove);
-			global::Gtk.Box.BoxChild w7 = ((global::Gtk.Box.BoxChild)(this.hbox1 [this.btnRemove]));
-			w7.PackType = ((global::Gtk.PackType)(1));
-			w7.Position = 1;
-			w7.Expand = false;
-			w7.Fill = false;
-			this.vbox1.Add (this.hbox1);
-			global::Gtk.Box.BoxChild w8 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.hbox1]));
-			w8.Position = 3;
+			global::Gtk.Box.BoxChild w8 = ((global::Gtk.Box.BoxChild)(this.hbox1 [this.btnRemove]));
+			w8.PackType = ((global::Gtk.PackType)(1));
+			w8.Position = 1;
 			w8.Expand = false;
 			w8.Fill = false;
+			this.vbox1.Add (this.hbox1);
+			global::Gtk.Box.BoxChild w9 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.hbox1]));
+			w9.Position = 3;
+			w9.Expand = false;
+			w9.Fill = false;
 			this.Add (this.vbox1);
 			if ((this.Child != null)) {
 				this.Child.ShowAll ();

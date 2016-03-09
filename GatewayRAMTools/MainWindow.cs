@@ -302,6 +302,7 @@ namespace GatewayRAMTools {
 					}
 					prgMain.Fraction = 0;
 					prgMain.Visible = true;
+					hbox2.BorderWidth = 3;
 					while (Gtk.Application.EventsPending ()) Gtk.Application.RunIteration ();
 					for (int currentHead = 0; currentHead < heads.Count; currentHead++) {
 						GWFileHeader activeDump = heads [currentHead];
@@ -340,6 +341,7 @@ namespace GatewayRAMTools {
 					}
 					MsgBoxInfo ("All expanded RAM dumps have been written.");
 					prgMain.Visible = false;
+					hbox2.BorderWidth = 0;
 				}
 			} else {
 				MsgBoxInfo ("No Gateway RAM Dumps have been ticked.");
