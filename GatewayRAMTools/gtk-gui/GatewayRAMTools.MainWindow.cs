@@ -109,7 +109,7 @@ namespace GatewayRAMTools
 			this.UIManager.InsertActionGroup (w1, 0);
 			this.AddAccelGroup (this.UIManager.AccelGroup);
 			this.Name = "GatewayRAMTools.MainWindow";
-			this.Title = global::Mono.Unix.Catalog.GetString ("MainWindow");
+			this.Title = global::Mono.Unix.Catalog.GetString ("Gateway RAM Tools");
 			this.WindowPosition = ((global::Gtk.WindowPosition)(1));
 			// Container child GatewayRAMTools.MainWindow.Gtk.Container+ContainerChild
 			this.vbox1 = new global::Gtk.VBox ();
