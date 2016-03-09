@@ -44,6 +44,8 @@ namespace GatewayRAMTools
 		
 		private global::Gtk.TreeView treeFiles;
 		
+		private global::Gtk.ProgressBar prgMain;
+		
 		private global::Gtk.HBox hbox1;
 		
 		private global::Gtk.Button btnAddFiles;
@@ -134,6 +136,14 @@ namespace GatewayRAMTools
 			global::Gtk.Box.BoxChild w4 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.GtkScrolledWindow]));
 			w4.Position = 1;
 			// Container child vbox1.Gtk.Box+BoxChild
+			this.prgMain = new global::Gtk.ProgressBar ();
+			this.prgMain.Name = "prgMain";
+			this.vbox1.Add (this.prgMain);
+			global::Gtk.Box.BoxChild w5 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.prgMain]));
+			w5.Position = 2;
+			w5.Expand = false;
+			w5.Fill = false;
+			// Container child vbox1.Gtk.Box+BoxChild
 			this.hbox1 = new global::Gtk.HBox ();
 			this.hbox1.Name = "hbox1";
 			this.hbox1.Spacing = 6;
@@ -146,10 +156,10 @@ namespace GatewayRAMTools
 			this.btnAddFiles.UseUnderline = true;
 			this.btnAddFiles.Label = global::Mono.Unix.Catalog.GetString ("Add Files..");
 			this.hbox1.Add (this.btnAddFiles);
-			global::Gtk.Box.BoxChild w5 = ((global::Gtk.Box.BoxChild)(this.hbox1 [this.btnAddFiles]));
-			w5.Position = 0;
-			w5.Expand = false;
-			w5.Fill = false;
+			global::Gtk.Box.BoxChild w6 = ((global::Gtk.Box.BoxChild)(this.hbox1 [this.btnAddFiles]));
+			w6.Position = 0;
+			w6.Expand = false;
+			w6.Fill = false;
 			// Container child hbox1.Gtk.Box+BoxChild
 			this.btnRemove = new global::Gtk.Button ();
 			this.btnRemove.WidthRequest = 95;
@@ -159,22 +169,23 @@ namespace GatewayRAMTools
 			this.btnRemove.UseUnderline = true;
 			this.btnRemove.Label = global::Mono.Unix.Catalog.GetString ("Remove Ticked");
 			this.hbox1.Add (this.btnRemove);
-			global::Gtk.Box.BoxChild w6 = ((global::Gtk.Box.BoxChild)(this.hbox1 [this.btnRemove]));
-			w6.PackType = ((global::Gtk.PackType)(1));
-			w6.Position = 1;
-			w6.Expand = false;
-			w6.Fill = false;
-			this.vbox1.Add (this.hbox1);
-			global::Gtk.Box.BoxChild w7 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.hbox1]));
-			w7.Position = 2;
+			global::Gtk.Box.BoxChild w7 = ((global::Gtk.Box.BoxChild)(this.hbox1 [this.btnRemove]));
+			w7.PackType = ((global::Gtk.PackType)(1));
+			w7.Position = 1;
 			w7.Expand = false;
 			w7.Fill = false;
+			this.vbox1.Add (this.hbox1);
+			global::Gtk.Box.BoxChild w8 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.hbox1]));
+			w8.Position = 3;
+			w8.Expand = false;
+			w8.Fill = false;
 			this.Add (this.vbox1);
 			if ((this.Child != null)) {
 				this.Child.ShowAll ();
 			}
 			this.DefaultWidth = 400;
 			this.DefaultHeight = 300;
+			this.prgMain.Hide ();
 			this.Show ();
 			this.DeleteEvent += new global::Gtk.DeleteEventHandler (this.OnDeleteEvent);
 			this.AboutAction.Activated += new global::System.EventHandler (this.OnAboutActionActivated);

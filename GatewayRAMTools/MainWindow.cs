@@ -295,6 +295,14 @@ namespace GatewayRAMTools {
 				var re = MsgBox.Run ();
 				MsgBox.Destroy ();
 				if (re == (int)ResponseType.Yes) {
+					int totalprogress = 0;
+					int currentprogress = 0;
+					foreach (GWFileHeader gwh in heads) {
+						totalprogress += gwh.memRegionCount;
+					}
+					prgMain.Fraction = 0;
+					prgMain.Visible = true;
+					while (Gtk.Application.EventsPending ()) Gtk.Application.RunIteration ();
 					for (int currentHead = 0; currentHead < heads.Count; currentHead++) {
 						GWFileHeader activeDump = heads [currentHead];
 						var zeropad = new byte[1024];
@@ -322,13 +330,16 @@ namespace GatewayRAMTools {
 										filew.Write (readbuffer, 0, bytesread);
 									}
 									filew.Flush ();
-
+									currentprogress++;
+									prgMain.Fraction = currentprogress / (float)totalprogress;
+									while (Gtk.Application.EventsPending ()) Gtk.Application.RunIteration ();
 								}
 							} // Using File.OpenWrite
 						} // Using File.OpenRead
 
 					}
 					MsgBoxInfo ("All expanded RAM dumps have been written.");
+					prgMain.Visible = false;
 				}
 			} else {
 				MsgBoxInfo ("No Gateway RAM Dumps have been ticked.");
