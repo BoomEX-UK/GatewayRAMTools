@@ -1,0 +1,404 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<stetic-interface>
+  <configuration>
+    <images-root-path>..</images-root-path>
+  </configuration>
+  <import>
+    <widget-library name="glade-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+    <widget-library name="../bin/Debug/GatewayRAMTools.exe" internal="true" />
+  </import>
+  <widget class="Gtk.Window" id="GatewayRAMTools.MainWindow" design-size="400 300">
+    <action-group name="Default">
+      <action id="FileAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">File</property>
+        <property name="ShortLabel" translatable="yes">File</property>
+      </action>
+      <action id="ToolsAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Tools</property>
+        <property name="ShortLabel" translatable="yes">Tools</property>
+      </action>
+      <action id="HelpAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Help</property>
+        <property name="ShortLabel" translatable="yes">Help</property>
+      </action>
+      <action id="AboutAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">About</property>
+        <property name="ShortLabel" translatable="yes">About</property>
+        <signal name="Activated" handler="OnAboutActionActivated" />
+      </action>
+      <action id="SupportAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Support</property>
+        <property name="ShortLabel" translatable="yes">Support</property>
+        <signal name="Activated" handler="OnSupportActionActivated" />
+      </action>
+      <action id="SelectAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Select</property>
+        <property name="ShortLabel" translatable="yes">Select</property>
+      </action>
+      <action id="AllAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">All</property>
+        <property name="ShortLabel" translatable="yes">All</property>
+        <signal name="Activated" handler="OnAllActionActivated" />
+      </action>
+      <action id="NoneAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">None</property>
+        <property name="ShortLabel" translatable="yes">None</property>
+        <signal name="Activated" handler="OnNoneActionActivated" />
+      </action>
+      <action id="AllGatewayAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">All Gateway</property>
+        <property name="ShortLabel" translatable="yes">All Gateway</property>
+        <signal name="Activated" handler="OnAllGatewayActionActivated" />
+      </action>
+      <action id="AllRAWAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">All RAW</property>
+        <property name="ShortLabel" translatable="yes">All RAW</property>
+        <signal name="Activated" handler="OnAllRAWActionActivated" />
+      </action>
+      <action id="ViewSelectedPartitionAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">View Selected Partition</property>
+        <property name="Sensitive">False</property>
+        <property name="ShortLabel" translatable="yes">View Selected Partition</property>
+        <signal name="Activated" handler="OnViewPartitionTableActionActivated" />
+      </action>
+      <action id="ExportRAWRAMDumpAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Export RAW RAM Dump</property>
+        <property name="ShortLabel" translatable="yes">Export RAW RAM Dump</property>
+        <signal name="Activated" handler="OnExportRAWDumpActionActivated" />
+      </action>
+      <action id="AddFilesAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Add Files..</property>
+        <property name="ShortLabel" translatable="yes">Add Files</property>
+        <signal name="Activated" handler="OnAddFilesActionActivated" />
+      </action>
+      <action id="ExitAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Exit</property>
+        <property name="ShortLabel" translatable="yes">Exit</property>
+        <signal name="Activated" handler="OnExitActionActivated" />
+      </action>
+      <action id="ProjectHomepageAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Project Homepage</property>
+        <property name="ShortLabel" translatable="yes">Project Homepage</property>
+        <signal name="Activated" handler="OnProjectHomepageActionActivated" />
+      </action>
+    </action-group>
+    <property name="MemberName" />
+    <property name="Title" translatable="yes">Gateway RAM Tools</property>
+    <property name="WindowPosition">Center</property>
+    <signal name="DeleteEvent" handler="OnDeleteEvent" />
+    <child>
+      <widget class="Gtk.VBox" id="vbox1">
+        <property name="MemberName" />
+        <property name="Spacing">6</property>
+        <child>
+          <widget class="Gtk.MenuBar" id="menubar1">
+            <property name="MemberName" />
+            <node name="menubar1" type="Menubar">
+              <node type="Menu" action="FileAction">
+                <node type="Menuitem" action="AddFilesAction" />
+                <node type="Separator" />
+                <node type="Menuitem" action="ExitAction" />
+              </node>
+              <node type="Menu" action="ToolsAction">
+                <node type="Menu" action="SelectAction">
+                  <node type="Menuitem" action="AllAction" />
+                  <node type="Menuitem" action="NoneAction" />
+                  <node type="Separator" />
+                  <node type="Menuitem" action="AllGatewayAction" />
+                  <node type="Menuitem" action="AllRAWAction" />
+                </node>
+                <node type="Separator" />
+                <node type="Menuitem" action="ViewSelectedPartitionAction" />
+                <node type="Menuitem" action="ExportRAWRAMDumpAction" />
+              </node>
+              <node type="Menu" action="HelpAction">
+                <node type="Menuitem" action="AboutAction" />
+                <node type="Separator" />
+                <node type="Menuitem" action="SupportAction" />
+                <node type="Menuitem" action="ProjectHomepageAction" />
+              </node>
+            </node>
+          </widget>
+          <packing>
+            <property name="Position">0</property>
+            <property name="AutoSize">True</property>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.ScrolledWindow" id="GtkScrolledWindow">
+            <property name="MemberName" />
+            <property name="ShadowType">In</property>
+            <property name="BorderWidth">3</property>
+            <child>
+              <widget class="Gtk.TreeView" id="treeFiles">
+                <property name="MemberName" />
+                <property name="CanFocus">True</property>
+                <property name="ShowScrollbars">True</property>
+                <signal name="CursorChanged" handler="OnTreeFilesCursorChanged" />
+                <signal name="RowActivated" handler="OnTreeFilesRowActivated" />
+              </widget>
+            </child>
+          </widget>
+          <packing>
+            <property name="Position">1</property>
+            <property name="AutoSize">True</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.HBox" id="hbox2">
+            <property name="MemberName" />
+            <property name="Spacing">6</property>
+            <child>
+              <widget class="Gtk.ProgressBar" id="prgMain">
+                <property name="MemberName" />
+                <property name="Visible">False</property>
+              </widget>
+              <packing>
+                <property name="Position">0</property>
+                <property name="AutoSize">True</property>
+              </packing>
+            </child>
+          </widget>
+          <packing>
+            <property name="Position">2</property>
+            <property name="AutoSize">True</property>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.HBox" id="hbox1">
+            <property name="MemberName" />
+            <property name="Spacing">6</property>
+            <property name="BorderWidth">3</property>
+            <child>
+              <widget class="Gtk.Button" id="btnAddFiles">
+                <property name="MemberName" />
+                <property name="WidthRequest">95</property>
+                <property name="CanFocus">True</property>
+                <property name="Type">TextOnly</property>
+                <property name="Label" translatable="yes">Add Files..</property>
+                <property name="UseUnderline">True</property>
+                <signal name="Clicked" handler="OnBtnAddFilesClicked" />
+              </widget>
+              <packing>
+                <property name="Position">0</property>
+                <property name="AutoSize">False</property>
+                <property name="Expand">False</property>
+                <property name="Fill">False</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="Gtk.Button" id="btnRemove">
+                <property name="MemberName" />
+                <property name="WidthRequest">95</property>
+                <property name="Sensitive">False</property>
+                <property name="CanFocus">True</property>
+                <property name="Type">TextOnly</property>
+                <property name="Label" translatable="yes">Remove Ticked</property>
+                <property name="UseUnderline">True</property>
+                <signal name="Clicked" handler="OnBtnRemoveClicked" />
+              </widget>
+              <packing>
+                <property name="PackType">End</property>
+                <property name="Position">1</property>
+                <property name="AutoSize">False</property>
+                <property name="Expand">False</property>
+                <property name="Fill">False</property>
+              </packing>
+            </child>
+          </widget>
+          <packing>
+            <property name="Position">3</property>
+            <property name="AutoSize">True</property>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
+          </packing>
+        </child>
+      </widget>
+    </child>
+  </widget>
+  <widget class="Gtk.Window" id="GatewayRAMTools.PartitionWindow" design-size="400 300">
+    <property name="MemberName" />
+    <property name="Title" translatable="yes">PartitionWindow</property>
+    <property name="WindowPosition">Center</property>
+    <child>
+      <widget class="Gtk.VBox" id="vbox2">
+        <property name="MemberName" />
+        <property name="Spacing">6</property>
+        <child>
+          <widget class="Gtk.Label" id="lblFName">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">{Filename}</property>
+          </widget>
+          <packing>
+            <property name="Position">0</property>
+            <property name="AutoSize">True</property>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
+            <property name="Padding">3</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.ScrolledWindow" id="GtkScrolledWindow">
+            <property name="MemberName" />
+            <property name="ShadowType">In</property>
+            <property name="BorderWidth">3</property>
+            <child>
+              <widget class="Gtk.TreeView" id="treePartition">
+                <property name="MemberName" />
+                <property name="CanFocus">True</property>
+                <property name="ShowScrollbars">True</property>
+                <signal name="RowActivated" handler="OnTreePartitionRowActivated" />
+              </widget>
+            </child>
+          </widget>
+          <packing>
+            <property name="Position">1</property>
+            <property name="AutoSize">True</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.HBox" id="hbox4">
+            <property name="MemberName" />
+            <property name="Spacing">6</property>
+            <child>
+              <widget class="Gtk.Label" id="label2">
+                <property name="MemberName" />
+                <property name="LabelProp" translatable="yes">RAM Offset</property>
+              </widget>
+              <packing>
+                <property name="Position">0</property>
+                <property name="AutoSize">False</property>
+                <property name="Fill">False</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="Gtk.Label" id="label3">
+                <property name="MemberName" />
+                <property name="LabelProp" translatable="yes">File Offset</property>
+              </widget>
+              <packing>
+                <property name="Position">1</property>
+                <property name="AutoSize">False</property>
+                <property name="Fill">False</property>
+              </packing>
+            </child>
+          </widget>
+          <packing>
+            <property name="Position">2</property>
+            <property name="AutoSize">True</property>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.HBox" id="hbox3">
+            <property name="MemberName" />
+            <property name="Spacing">6</property>
+            <property name="BorderWidth">3</property>
+            <child>
+              <widget class="Gtk.Entry" id="txtRAM">
+                <property name="MemberName" />
+                <property name="CanFocus">True</property>
+                <property name="Text" translatable="yes">00000000</property>
+                <property name="IsEditable">True</property>
+                <property name="MaxLength">8</property>
+                <property name="InvisibleChar">●</property>
+                <signal name="Changed" handler="OnTxtRAMChanged" />
+              </widget>
+              <packing>
+                <property name="Position">0</property>
+                <property name="AutoSize">True</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="Gtk.Entry" id="txtFile">
+                <property name="MemberName" />
+                <property name="CanFocus">True</property>
+                <property name="Text" translatable="yes">00000000</property>
+                <property name="IsEditable">True</property>
+                <property name="MaxLength">8</property>
+                <property name="InvisibleChar">●</property>
+                <signal name="Changed" handler="OnTxtFileChanged" />
+              </widget>
+              <packing>
+                <property name="Position">1</property>
+                <property name="AutoSize">True</property>
+              </packing>
+            </child>
+          </widget>
+          <packing>
+            <property name="Position">3</property>
+            <property name="AutoSize">True</property>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.HBox" id="hbox2">
+            <property name="MemberName" />
+            <property name="Spacing">6</property>
+            <property name="BorderWidth">3</property>
+            <child>
+              <widget class="Gtk.Button" id="btnExport">
+                <property name="MemberName" />
+                <property name="CanFocus">True</property>
+                <property name="Type">TextOnly</property>
+                <property name="Label" translatable="yes">Export Header</property>
+                <property name="UseUnderline">True</property>
+                <signal name="Clicked" handler="OnBtnExportClicked" />
+              </widget>
+              <packing>
+                <property name="Position">0</property>
+                <property name="AutoSize">True</property>
+                <property name="Expand">False</property>
+                <property name="Fill">False</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="Gtk.Button" id="btnPartClose">
+                <property name="MemberName" />
+                <property name="CanFocus">True</property>
+                <property name="Type">TextOnly</property>
+                <property name="Label" translatable="yes">Close Window</property>
+                <property name="UseUnderline">True</property>
+                <signal name="Clicked" handler="OnBtnPartCloseClicked" />
+              </widget>
+              <packing>
+                <property name="PackType">End</property>
+                <property name="Position">1</property>
+                <property name="AutoSize">True</property>
+                <property name="Expand">False</property>
+                <property name="Fill">False</property>
+              </packing>
+            </child>
+          </widget>
+          <packing>
+            <property name="Position">4</property>
+            <property name="AutoSize">True</property>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
+          </packing>
+        </child>
+      </widget>
+    </child>
+  </widget>
+</stetic-interface>
