@@ -194,6 +194,8 @@ namespace GatewayRAMTools
         private void viewSelectedPartitionToolStripMenuItem_Click(object sender, EventArgs e)
         {
             HeaderWindow newhrd = new HeaderWindow();
+            GWFunctions gwf = new GWFunctions();
+            newhrd.binfile = gwf.buildFromDump(lstFiles.SelectedItems[0].SubItems[3].Text);
             newhrd.Show();
         }
 

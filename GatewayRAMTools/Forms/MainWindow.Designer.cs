@@ -72,7 +72,7 @@
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(368, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(384, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -226,7 +226,7 @@
             this.pnlButtons.Location = new System.Drawing.Point(0, 242);
             this.pnlButtons.Name = "pnlButtons";
             this.pnlButtons.Padding = new System.Windows.Forms.Padding(6, 0, 6, 6);
-            this.pnlButtons.Size = new System.Drawing.Size(368, 34);
+            this.pnlButtons.Size = new System.Drawing.Size(384, 34);
             this.pnlButtons.TabIndex = 1;
             // 
             // btnRemove
@@ -235,7 +235,7 @@
             this.btnRemove.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnRemove.Enabled = false;
             this.btnRemove.Image = global::GatewayRAMTools.Properties.Resources.document__minus;
-            this.btnRemove.Location = new System.Drawing.Point(253, 0);
+            this.btnRemove.Location = new System.Drawing.Point(269, 0);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(109, 28);
             this.btnRemove.TabIndex = 1;
@@ -266,7 +266,7 @@
             this.pnlListView.Location = new System.Drawing.Point(0, 24);
             this.pnlListView.Name = "pnlListView";
             this.pnlListView.Padding = new System.Windows.Forms.Padding(6, 0, 6, 6);
-            this.pnlListView.Size = new System.Drawing.Size(368, 218);
+            this.pnlListView.Size = new System.Drawing.Size(384, 218);
             this.pnlListView.TabIndex = 2;
             // 
             // lstFiles
@@ -283,7 +283,7 @@
             this.lstFiles.Location = new System.Drawing.Point(6, 0);
             this.lstFiles.MultiSelect = false;
             this.lstFiles.Name = "lstFiles";
-            this.lstFiles.Size = new System.Drawing.Size(356, 212);
+            this.lstFiles.Size = new System.Drawing.Size(372, 212);
             this.lstFiles.TabIndex = 3;
             this.lstFiles.UseCompatibleStateImageBehavior = false;
             this.lstFiles.View = System.Windows.Forms.View.Details;
@@ -321,13 +321,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(368, 276);
+            this.ClientSize = new System.Drawing.Size(384, 276);
             this.Controls.Add(this.pnlListView);
             this.Controls.Add(this.pnlButtons);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.MinimumSize = new System.Drawing.Size(384, 315);
+            this.MinimumSize = new System.Drawing.Size(400, 315);
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gateway RAM Tools v1.1";
