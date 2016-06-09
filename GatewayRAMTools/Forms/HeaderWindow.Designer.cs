@@ -30,12 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HeaderWindow));
             this.pnlButtons = new System.Windows.Forms.Panel();
-            this.btnClose = new System.Windows.Forms.Button();
-            this.btnExport = new System.Windows.Forms.Button();
             this.pnlText = new System.Windows.Forms.Panel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtRAM = new System.Windows.Forms.TextBox();
+            this.txtFile = new System.Windows.Forms.TextBox();
             this.pnlTextLabels = new System.Windows.Forms.Panel();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.lblRAM = new System.Windows.Forms.Label();
@@ -48,6 +46,9 @@
             this.ramTo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.filePosition = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.dumpSize = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.savXML = new System.Windows.Forms.SaveFileDialog();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.btnExport = new System.Windows.Forms.Button();
             this.pnlButtons.SuspendLayout();
             this.pnlText.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -74,26 +75,6 @@
             this.pnlButtons.Size = new System.Drawing.Size(384, 37);
             this.pnlButtons.TabIndex = 0;
             // 
-            // btnClose
-            // 
-            this.btnClose.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnClose.Location = new System.Drawing.Point(303, 0);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(75, 31);
-            this.btnClose.TabIndex = 1;
-            this.btnClose.Text = "button2";
-            this.btnClose.UseVisualStyleBackColor = true;
-            // 
-            // btnExport
-            // 
-            this.btnExport.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnExport.Location = new System.Drawing.Point(6, 0);
-            this.btnExport.Name = "btnExport";
-            this.btnExport.Size = new System.Drawing.Size(75, 31);
-            this.btnExport.TabIndex = 0;
-            this.btnExport.Text = "button1";
-            this.btnExport.UseVisualStyleBackColor = true;
-            // 
             // pnlText
             // 
             this.pnlText.Controls.Add(this.splitContainer1);
@@ -112,30 +93,38 @@
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.textBox1);
+            this.splitContainer1.Panel1.Controls.Add(this.txtRAM);
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.textBox2);
+            this.splitContainer1.Panel2.Controls.Add(this.txtFile);
             this.splitContainer1.Size = new System.Drawing.Size(372, 20);
             this.splitContainer1.SplitterDistance = 186;
             this.splitContainer1.TabIndex = 1;
             // 
-            // textBox1
+            // txtRAM
             // 
-            this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox1.Location = new System.Drawing.Point(0, 0);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(186, 20);
-            this.textBox1.TabIndex = 1;
+            this.txtRAM.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtRAM.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtRAM.Location = new System.Drawing.Point(0, 0);
+            this.txtRAM.MaxLength = 8;
+            this.txtRAM.Name = "txtRAM";
+            this.txtRAM.Size = new System.Drawing.Size(186, 20);
+            this.txtRAM.TabIndex = 1;
+            this.txtRAM.Text = "00000000";
+            this.txtRAM.TextChanged += new System.EventHandler(this.textChangeRamFile);
             // 
-            // textBox2
+            // txtFile
             // 
-            this.textBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox2.Location = new System.Drawing.Point(0, 0);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(182, 20);
-            this.textBox2.TabIndex = 2;
+            this.txtFile.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtFile.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtFile.Location = new System.Drawing.Point(0, 0);
+            this.txtFile.MaxLength = 8;
+            this.txtFile.Name = "txtFile";
+            this.txtFile.Size = new System.Drawing.Size(182, 20);
+            this.txtFile.TabIndex = 2;
+            this.txtFile.Text = "00000000";
+            this.txtFile.TextChanged += new System.EventHandler(this.textChangeRamFile);
             // 
             // pnlTextLabels
             // 
@@ -229,6 +218,7 @@
             this.lstHeader.TabIndex = 0;
             this.lstHeader.UseCompatibleStateImageBehavior = false;
             this.lstHeader.View = System.Windows.Forms.View.Details;
+            this.lstHeader.DoubleClick += new System.EventHandler(this.lstHeader_DoubleClick);
             // 
             // ramFrom
             // 
@@ -246,6 +236,39 @@
             // 
             this.dumpSize.Text = "Dump Size";
             // 
+            // savXML
+            // 
+            this.savXML.Filter = "XML File|*.xml";
+            this.savXML.Title = "Save Gateway Header as XML";
+            // 
+            // btnClose
+            // 
+            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClose.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnClose.Image = global::GatewayRAMTools.Properties.Resources.cross_circle;
+            this.btnClose.Location = new System.Drawing.Point(268, 0);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(110, 31);
+            this.btnClose.TabIndex = 1;
+            this.btnClose.Text = "Close Window";
+            this.btnClose.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // btnExport
+            // 
+            this.btnExport.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExport.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnExport.Image = global::GatewayRAMTools.Properties.Resources.table_export;
+            this.btnExport.Location = new System.Drawing.Point(6, 0);
+            this.btnExport.Name = "btnExport";
+            this.btnExport.Size = new System.Drawing.Size(110, 31);
+            this.btnExport.TabIndex = 0;
+            this.btnExport.Text = "Export Header";
+            this.btnExport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnExport.UseVisualStyleBackColor = true;
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
+            // 
             // HeaderWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -260,7 +283,7 @@
             this.MinimumSize = new System.Drawing.Size(400, 315);
             this.Name = "HeaderWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "PartitionTable";
+            this.Text = "Partition Table - ";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.HeaderWindow_FormClosed);
             this.Load += new System.EventHandler(this.HeaderWindow_Load);
             this.pnlButtons.ResumeLayout(false);
@@ -294,8 +317,8 @@
         private System.Windows.Forms.Panel pnlMemregions;
         private System.Windows.Forms.ListView lstHeader;
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtFile;
+        private System.Windows.Forms.TextBox txtRAM;
         private System.Windows.Forms.SplitContainer splitContainer2;
         private System.Windows.Forms.Label lblRAM;
         private System.Windows.Forms.Label lblFile;
@@ -303,5 +326,6 @@
         private System.Windows.Forms.ColumnHeader ramTo;
         private System.Windows.Forms.ColumnHeader filePosition;
         private System.Windows.Forms.ColumnHeader dumpSize;
+        private System.Windows.Forms.SaveFileDialog savXML;
     }
 }

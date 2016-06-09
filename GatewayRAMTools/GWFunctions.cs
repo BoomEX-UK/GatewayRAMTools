@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Windows.Forms;
 using System.IO;
 
 // Ram Tools Class for Gateway File Functions - To be extended in the future
@@ -81,7 +82,7 @@ namespace GatewayRAMTools
 						} else
 							newline [3] = 0;
 						tmpres.memRegions [i] = newline;
-					}
+                    }
 					tmpres.rawsize = tmpres.memRegions [tmpres.memRegionCount - 1] [1];
 					tmpres.magicBit = (int)reader.ReadUInt32 (); // Validation Int
 					tmpres.magicBit0x = tmpres.magicBit.ToString("X8"); // Validation Hex
@@ -104,7 +105,7 @@ namespace GatewayRAMTools
 		}
 
         // Expand a Gateway RAM Dump File to a RAW (absolute) RAM Dump File
-        public bool dumpGWRAM( GWFileHeader activeDump)
+        public bool dumpGWRAM( GWFileHeader activeDump, ProgressBar progress)
         {
             var zeropad = new byte[1024];
             var readbuffer = new byte[1024];
@@ -136,6 +137,7 @@ namespace GatewayRAMTools
                             filew.Write(readbuffer, 0, bytesread);
                         }
                         filew.Flush();
+                        progress.Value++;
                     }
                 } // Using File.OpenWrite
             } // Using File.OpenRead

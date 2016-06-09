@@ -63,6 +63,16 @@ namespace GatewayRAMTools.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap cross_circle {
+            get {
+                object obj = ResourceManager.GetObject("cross-circle", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap document__minus {
             get {
                 object obj = ResourceManager.GetObject("document--minus", resourceCulture);
@@ -76,6 +86,16 @@ namespace GatewayRAMTools.Properties {
         internal static System.Drawing.Bitmap document__plus {
             get {
                 object obj = ResourceManager.GetObject("document--plus", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap table_export {
+            get {
+                object obj = ResourceManager.GetObject("table-export", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

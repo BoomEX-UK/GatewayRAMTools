@@ -96,7 +96,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\cross-circle.png" />
     <Content Include="Resources\grt.ico" />
+    <None Include="Resources\table-export.png" />
     <None Include="Resources\document--minus.png" />
     <None Include="Resources\document--plus.png" />
   </ItemGroup>

@@ -148,6 +148,7 @@ namespace GatewayRAMTools
             List<GWFileHeader> heads = new List<GWFileHeader>();
             GWFunctions gwf = new GWFunctions();
             long tfSize = 0;
+            int tregions = 0;
 
             foreach (ListViewItem lvi in lstFiles.CheckedItems)
             {
@@ -155,6 +156,7 @@ namespace GatewayRAMTools
                 {
                     heads.Add(gwf.buildFromDump(lvi.SubItems[3].Text));
                     tfSize += heads[heads.Count - 1].rawsize;
+                    tregions += heads[heads.Count - 1].memRegionCount;
                 }
             }
 
@@ -166,7 +168,15 @@ namespace GatewayRAMTools
 
                 if( confRes == DialogResult.Yes)
                 {
-
+                    pbar.Value = 0;
+                    pbar.Maximum = tregions;
+                    pnlProgress.Visible = true;
+                    for( int i =0; i<heads.Count; i++)
+                    {
+                        gwf.dumpGWRAM(heads[i], pbar);
+                    }
+                    pnlProgress.Visible = false;
+                    MessageBox.Show("RAM Dumps have been sucessfull created.", "RAW RAM Dumping", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
             } else
             {
