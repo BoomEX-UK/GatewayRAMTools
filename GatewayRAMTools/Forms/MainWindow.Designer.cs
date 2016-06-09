@@ -50,6 +50,8 @@
             this.supportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.projectHomepageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlButtons = new System.Windows.Forms.Panel();
+            this.btnRemove = new System.Windows.Forms.Button();
+            this.btnAddFiles = new System.Windows.Forms.Button();
             this.pnlListView = new System.Windows.Forms.Panel();
             this.lstFiles = new System.Windows.Forms.ListView();
             this.filename = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -57,8 +59,6 @@
             this.type = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.filepath = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.dgAddFiles = new System.Windows.Forms.OpenFileDialog();
-            this.btnRemove = new System.Windows.Forms.Button();
-            this.btnAddFiles = new System.Windows.Forms.Button();
             this.pnlProgress = new System.Windows.Forms.Panel();
             this.pbar = new System.Windows.Forms.ProgressBar();
             this.menuStrip1.SuspendLayout();
@@ -232,6 +232,37 @@
             this.pnlButtons.Size = new System.Drawing.Size(384, 37);
             this.pnlButtons.TabIndex = 1;
             // 
+            // btnRemove
+            // 
+            this.btnRemove.AutoSize = true;
+            this.btnRemove.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRemove.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnRemove.Enabled = false;
+            this.btnRemove.Image = global::GatewayRAMTools.Properties.Resources.document__minus;
+            this.btnRemove.Location = new System.Drawing.Point(268, 0);
+            this.btnRemove.Name = "btnRemove";
+            this.btnRemove.Size = new System.Drawing.Size(110, 31);
+            this.btnRemove.TabIndex = 1;
+            this.btnRemove.Text = "Remove Ticked";
+            this.btnRemove.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnRemove.UseVisualStyleBackColor = true;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
+            // 
+            // btnAddFiles
+            // 
+            this.btnAddFiles.AutoSize = true;
+            this.btnAddFiles.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddFiles.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnAddFiles.Image = global::GatewayRAMTools.Properties.Resources.document__plus;
+            this.btnAddFiles.Location = new System.Drawing.Point(6, 0);
+            this.btnAddFiles.Name = "btnAddFiles";
+            this.btnAddFiles.Size = new System.Drawing.Size(110, 31);
+            this.btnAddFiles.TabIndex = 0;
+            this.btnAddFiles.Text = "Add Files..";
+            this.btnAddFiles.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAddFiles.UseVisualStyleBackColor = true;
+            this.btnAddFiles.Click += new System.EventHandler(this.btnAddFiles_Click);
+            // 
             // pnlListView
             // 
             this.pnlListView.Controls.Add(this.lstFiles);
@@ -290,37 +321,6 @@
             this.dgAddFiles.Multiselect = true;
             this.dgAddFiles.Title = "RAM Dumps";
             // 
-            // btnRemove
-            // 
-            this.btnRemove.AutoSize = true;
-            this.btnRemove.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRemove.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnRemove.Enabled = false;
-            this.btnRemove.Image = global::GatewayRAMTools.Properties.Resources.document__minus;
-            this.btnRemove.Location = new System.Drawing.Point(268, 0);
-            this.btnRemove.Name = "btnRemove";
-            this.btnRemove.Size = new System.Drawing.Size(110, 31);
-            this.btnRemove.TabIndex = 1;
-            this.btnRemove.Text = "Remove Ticked";
-            this.btnRemove.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnRemove.UseVisualStyleBackColor = true;
-            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
-            // 
-            // btnAddFiles
-            // 
-            this.btnAddFiles.AutoSize = true;
-            this.btnAddFiles.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddFiles.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnAddFiles.Image = global::GatewayRAMTools.Properties.Resources.document__plus;
-            this.btnAddFiles.Location = new System.Drawing.Point(6, 0);
-            this.btnAddFiles.Name = "btnAddFiles";
-            this.btnAddFiles.Size = new System.Drawing.Size(110, 31);
-            this.btnAddFiles.TabIndex = 0;
-            this.btnAddFiles.Text = "Add Files..";
-            this.btnAddFiles.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAddFiles.UseVisualStyleBackColor = true;
-            this.btnAddFiles.Click += new System.EventHandler(this.btnAddFiles_Click);
-            // 
             // pnlProgress
             // 
             this.pnlProgress.Controls.Add(this.pbar);
@@ -354,7 +354,7 @@
             this.MinimumSize = new System.Drawing.Size(400, 315);
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Gateway RAM Tools v1.1";
+            this.Text = "Gateway RAM Tools v";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.pnlButtons.ResumeLayout(false);

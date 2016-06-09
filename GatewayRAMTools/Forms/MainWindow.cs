@@ -18,6 +18,7 @@ namespace GatewayRAMTools
             InitializeComponent();
             lstFiles.Columns.RemoveAt(3);
             resizeColumns();
+            this.Text += string.Format("{0}.{1}", System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.Major, System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.Minor);
         }
 
         // Convert Bytes To Next Readable Format (Simple)
