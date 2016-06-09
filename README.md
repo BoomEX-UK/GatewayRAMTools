@@ -1,5 +1,5 @@
 # Gateway RAM Tools
-A collection of useful tools for exploring RAM Dumps created by Gateway 3DS. Written in C# and using .NET 4 for cross-platform GUI friendliness (Windows/Mono).
+A collection of useful tools for exploring RAM Dumps created by Gateway 3DS. Written in C# and using .NET 4 for cross-platform GUI friendliness (Windows/Mono/Wine).
 
 # Background
 This project is created as an eductional piece for myself and the 3DS hacking community to make full use of the RAM Dumping feature in Gateway 3DS.
