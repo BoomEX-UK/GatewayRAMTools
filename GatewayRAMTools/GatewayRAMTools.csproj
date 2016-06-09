@@ -96,6 +96,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\property-export.png" />
     <None Include="Resources\cross-circle.png" />
     <Content Include="Resources\grt.ico" />
     <None Include="Resources\table-export.png" />

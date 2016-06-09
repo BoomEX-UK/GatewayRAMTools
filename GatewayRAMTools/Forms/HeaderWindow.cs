@@ -129,5 +129,41 @@ namespace GatewayRAMTools
             txtTo.TextChanged += this.textChangeRamFile;
         }
 
+        private void exportRegionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            long fileFrom = 0;
+            long fileSize = 0;
+            long ramFrom = 0;
+            int bytesread = 0;
+            var readbuffer = new byte[1024];
+            ListViewItem item = new ListViewItem();
+
+            if (lstHeader.FocusedItem != null)
+            {
+                item = lstHeader.FocusedItem;
+                fileFrom = int.Parse(item.SubItems[2].Text, System.Globalization.NumberStyles.HexNumber);
+                fileSize = int.Parse(item.SubItems[3].Text, System.Globalization.NumberStyles.HexNumber);
+                ramFrom = int.Parse(item.SubItems[0].Text, System.Globalization.NumberStyles.HexNumber);
+                savRegion.FileName = Path.GetFileNameWithoutExtension(binfile.fileName) + " " + ramFrom.ToString("X8") + "-" + (ramFrom + fileSize).ToString("X8") + ".bin";
+                if (savRegion.ShowDialog() == DialogResult.OK)
+                {
+                    using (FileStream filer = File.OpenRead(binfile.filePath))
+                    {
+                        using (FileStream filew = File.Create(savRegion.FileName))
+                        {
+                            filer.Seek(fileFrom, 0);
+                            while (filew.Position < fileSize)
+                            {
+                                int thisblock = (int)((fileFrom + fileSize) - filew.Position);
+                                if (thisblock > readbuffer.Length) thisblock = readbuffer.Length;
+                                bytesread = filer.Read(readbuffer, 0, thisblock);
+                                filew.Write(readbuffer, 0, bytesread);
+                            }
+                            filew.Flush();
+                        }
+                    }
+                }
+            }
+        }
     }
 }

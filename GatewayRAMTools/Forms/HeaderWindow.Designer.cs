@@ -28,8 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HeaderWindow));
             this.pnlButtons = new System.Windows.Forms.Panel();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.btnExport = new System.Windows.Forms.Button();
             this.pnlText = new System.Windows.Forms.Panel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.txtRAM = new System.Windows.Forms.TextBox();
@@ -46,9 +49,10 @@
             this.ramTo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.filePosition = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.dumpSize = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.mnuPopup = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.exportRegionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.savXML = new System.Windows.Forms.SaveFileDialog();
-            this.btnClose = new System.Windows.Forms.Button();
-            this.btnExport = new System.Windows.Forms.Button();
+            this.savRegion = new System.Windows.Forms.SaveFileDialog();
             this.pnlButtons.SuspendLayout();
             this.pnlText.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -62,6 +66,7 @@
             this.splitContainer2.SuspendLayout();
             this.pnlMainLabel.SuspendLayout();
             this.pnlMemregions.SuspendLayout();
+            this.mnuPopup.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlButtons
@@ -74,6 +79,34 @@
             this.pnlButtons.Padding = new System.Windows.Forms.Padding(6, 0, 6, 6);
             this.pnlButtons.Size = new System.Drawing.Size(384, 37);
             this.pnlButtons.TabIndex = 0;
+            // 
+            // btnClose
+            // 
+            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClose.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnClose.Image = global::GatewayRAMTools.Properties.Resources.cross_circle;
+            this.btnClose.Location = new System.Drawing.Point(268, 0);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(110, 31);
+            this.btnClose.TabIndex = 1;
+            this.btnClose.Text = "Close Window";
+            this.btnClose.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // btnExport
+            // 
+            this.btnExport.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExport.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnExport.Image = global::GatewayRAMTools.Properties.Resources.table_export;
+            this.btnExport.Location = new System.Drawing.Point(6, 0);
+            this.btnExport.Name = "btnExport";
+            this.btnExport.Size = new System.Drawing.Size(110, 31);
+            this.btnExport.TabIndex = 0;
+            this.btnExport.Text = "Export Header";
+            this.btnExport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnExport.UseVisualStyleBackColor = true;
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
             // 
             // pnlText
             // 
@@ -208,6 +241,7 @@
             this.ramTo,
             this.filePosition,
             this.dumpSize});
+            this.lstHeader.ContextMenuStrip = this.mnuPopup;
             this.lstHeader.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lstHeader.FullRowSelect = true;
             this.lstHeader.GridLines = true;
@@ -236,38 +270,29 @@
             // 
             this.dumpSize.Text = "Dump Size";
             // 
+            // mnuPopup
+            // 
+            this.mnuPopup.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.exportRegionToolStripMenuItem});
+            this.mnuPopup.Name = "mnuPopup";
+            this.mnuPopup.Size = new System.Drawing.Size(153, 48);
+            // 
+            // exportRegionToolStripMenuItem
+            // 
+            this.exportRegionToolStripMenuItem.Image = global::GatewayRAMTools.Properties.Resources.property_export;
+            this.exportRegionToolStripMenuItem.Name = "exportRegionToolStripMenuItem";
+            this.exportRegionToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exportRegionToolStripMenuItem.Text = "Export Region";
+            this.exportRegionToolStripMenuItem.Click += new System.EventHandler(this.exportRegionToolStripMenuItem_Click);
+            // 
             // savXML
             // 
             this.savXML.Filter = "XML File|*.xml";
             this.savXML.Title = "Save Gateway Header as XML";
             // 
-            // btnClose
+            // savRegion
             // 
-            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnClose.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnClose.Image = global::GatewayRAMTools.Properties.Resources.cross_circle;
-            this.btnClose.Location = new System.Drawing.Point(268, 0);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(110, 31);
-            this.btnClose.TabIndex = 1;
-            this.btnClose.Text = "Close Window";
-            this.btnClose.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // btnExport
-            // 
-            this.btnExport.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnExport.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnExport.Image = global::GatewayRAMTools.Properties.Resources.table_export;
-            this.btnExport.Location = new System.Drawing.Point(6, 0);
-            this.btnExport.Name = "btnExport";
-            this.btnExport.Size = new System.Drawing.Size(110, 31);
-            this.btnExport.TabIndex = 0;
-            this.btnExport.Text = "Export Header";
-            this.btnExport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnExport.UseVisualStyleBackColor = true;
-            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
+            this.savRegion.Filter = "RAM Region|*.bin|All Files|*.*";
             // 
             // HeaderWindow
             // 
@@ -301,6 +326,7 @@
             this.splitContainer2.ResumeLayout(false);
             this.pnlMainLabel.ResumeLayout(false);
             this.pnlMemregions.ResumeLayout(false);
+            this.mnuPopup.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -327,5 +353,8 @@
         private System.Windows.Forms.ColumnHeader filePosition;
         private System.Windows.Forms.ColumnHeader dumpSize;
         private System.Windows.Forms.SaveFileDialog savXML;
+        private System.Windows.Forms.ContextMenuStrip mnuPopup;
+        private System.Windows.Forms.ToolStripMenuItem exportRegionToolStripMenuItem;
+        private System.Windows.Forms.SaveFileDialog savRegion;
     }
 }
