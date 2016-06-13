@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
 using System.IO;
 
 namespace GatewayRAMTools
@@ -172,12 +173,30 @@ namespace GatewayRAMTools
                     pbar.Value = 0;
                     pbar.Maximum = tregions;
                     pnlProgress.Visible = true;
-                    for( int i =0; i<heads.Count; i++)
-                    {
-                        gwf.dumpGWRAM(heads[i], pbar);
-                    }
-                    pnlProgress.Visible = false;
-                    MessageBox.Show("RAM Dumps have been sucessfull created.", "RAW RAM Dumping", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    exportRAWRAMDumpToolStripMenuItem.Enabled = false;
+                    Thread backgroundThread = new Thread(
+                       new ThreadStart(() =>
+                       {
+                           for (int i = 0; i < heads.Count; i++)
+                           {
+                               gwf.dumpGWRAM(heads[i], pbar);
+                           }
+                           pnlProgress.BeginInvoke(
+                               new Action(() =>
+                               {
+                                   pnlProgress.Visible = false;
+                               }
+                            ));
+                           menuStrip1.BeginInvoke(
+                               new Action(() =>
+                               {
+                                   exportRAWRAMDumpToolStripMenuItem.Enabled = true;
+                               }
+                           ));
+                           MessageBox.Show("RAM Dumps have been sucessfull created.", "RAW RAM Dumping", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                       }
+                   ));
+                    backgroundThread.Start();
                 }
             } else
             {
@@ -217,6 +236,38 @@ namespace GatewayRAMTools
             {
                 viewSelectedPartitionToolStripMenuItem_Click(sender, e);
                 lstsend.FocusedItem.Checked = !lstsend.FocusedItem.Checked;
+            }
+        }
+
+        private void cheatFinderToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            List<GWFileHeader> cheatFiles = new List<GWFileHeader>();
+            GWFunctions gwf = new GWFunctions();
+            string SHAmatch = null;
+            bool doMatch = true;
+
+            foreach( ListViewItem lvi in lstFiles.CheckedItems)
+            {
+                cheatFiles.Add(gwf.buildFromDump(lvi.SubItems[3].Text));
+                if(SHAmatch == null)
+                {
+                    SHAmatch = cheatFiles[cheatFiles.Count - 1].headerSHA1;
+                } else
+                {
+                    if (SHAmatch != cheatFiles[cheatFiles.Count - 1].headerSHA1) doMatch = false;
+                }
+            }
+
+            if ((cheatFiles.Count > 0) && doMatch)
+            {
+                FixedAddrWindow cht = new FixedAddrWindow();
+                cht.cheatFiles = cheatFiles;
+                cht.Show();
+            }
+            else
+            {
+                if (!doMatch) MessageBox.Show("The layout of your RAM Dumps do not match. You cannot mix RAW/Gateway & all RAM dumps selected must be from the same game.", "Cheat Finder Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                else MessageBox.Show("You must have at least 1 RAM Dump ticked before searching.", "Cheat Finder Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }

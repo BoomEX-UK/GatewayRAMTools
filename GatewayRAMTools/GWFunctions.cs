@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Security.Cryptography;
 using System.Windows.Forms;
 using System.IO;
 
@@ -8,18 +9,20 @@ namespace GatewayRAMTools
 {
 	// File Header Class
 	public class GWFileHeader {
+        public string readerVersion = "1.1"; // Version of the Reader
 		public string filePath; // full file path
 		public string fileName; // file name only
-		public string leadIn;
+		public string leadIn; // First 32Bits (# of Mem Regions)
 		public bool isGateway; // rough validation (needs improving)
-		public string error;
-		public long fileSize; // file size (Bytes)
-		public long rawsize;
+		public string error; // Reasoning for isGateway=false
+		public long fileSize; // Actual file size (Bytes)
+		public long rawsize; // Expanded File Size (Bytes)
 		public int headerSize; // Size of Header (Bytes)
 		public int memRegionCount; // # of Header Blocks
 		public int[][] memRegions; // Header Blocks
 		public int magicBit; // Validation Int
-		public string magicBit0x;
+		public string magicBit0x; // Validation Hex
+        public string headerSHA1; // SHA1 Hash of Header
 	}
 
 	// Functions
@@ -87,7 +90,17 @@ namespace GatewayRAMTools
 					tmpres.magicBit = (int)reader.ReadUInt32 (); // Validation Int
 					tmpres.magicBit0x = tmpres.magicBit.ToString("X8"); // Validation Hex
 					tmpres.isGateway = (tmpres.magicBit == tmpres.memRegions [tmpres.memRegionCount - 1] [3]); // Final Check Against Validation Int
-					if( !tmpres.isGateway ) tmpres.error = "Validation Failed";
+                    if (!tmpres.isGateway) tmpres.error = "Validation Failed";
+                    else
+                    {
+                        var header = new byte[tmpres.headerSize];
+                        fs.Position = 0;
+                        fs.Read(header, 0, header.Length);
+                        using (SHA1CryptoServiceProvider sha1 = new SHA1CryptoServiceProvider())
+                        {
+                            tmpres.headerSHA1 = Convert.ToBase64String(sha1.ComputeHash(header));
+                        }
+                    }
 				}
 
 				if( !tmpres.isGateway ){
@@ -137,12 +150,18 @@ namespace GatewayRAMTools
                             filew.Write(readbuffer, 0, bytesread);
                         }
                         filew.Flush();
-                        progress.Value++;
+                        progress.BeginInvoke(
+                            new Action(() =>
+                            {
+                                progress.Value++;
+                            }
+                        ));
                     }
                 } // Using File.OpenWrite
             } // Using File.OpenRead
             return true;
         }
-	}
+
+    }
 }
 

@@ -121,6 +121,7 @@
             // splitContainer1
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.IsSplitterFixed = true;
             this.splitContainer1.Location = new System.Drawing.Point(6, 0);
             this.splitContainer1.Name = "splitContainer1";
             // 
@@ -171,6 +172,7 @@
             // splitContainer2
             // 
             this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer2.IsSplitterFixed = true;
             this.splitContainer2.Location = new System.Drawing.Point(0, 0);
             this.splitContainer2.Name = "splitContainer2";
             // 
@@ -275,13 +277,13 @@
             this.mnuPopup.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.exportRegionToolStripMenuItem});
             this.mnuPopup.Name = "mnuPopup";
-            this.mnuPopup.Size = new System.Drawing.Size(153, 48);
+            this.mnuPopup.Size = new System.Drawing.Size(148, 26);
             // 
             // exportRegionToolStripMenuItem
             // 
             this.exportRegionToolStripMenuItem.Image = global::GatewayRAMTools.Properties.Resources.property_export;
             this.exportRegionToolStripMenuItem.Name = "exportRegionToolStripMenuItem";
-            this.exportRegionToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exportRegionToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.exportRegionToolStripMenuItem.Text = "Export Region";
             this.exportRegionToolStripMenuItem.Click += new System.EventHandler(this.exportRegionToolStripMenuItem_Click);
             // 

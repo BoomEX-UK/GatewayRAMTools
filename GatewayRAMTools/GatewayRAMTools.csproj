@@ -51,6 +51,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\FixedAddrWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FixedAddrWindow.Designer.cs">
+      <DependentUpon>FixedAddrWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\HeaderWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +72,9 @@
     <Compile Include="GWFunctions.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\FixedAddrWindow.resx">
+      <DependentUpon>FixedAddrWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\HeaderWindow.resx">
       <DependentUpon>HeaderWindow.cs</DependentUpon>
     </EmbeddedResource>
@@ -96,8 +105,19 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\stickman-smiley-question.png" />
+    <None Include="Resources\node-magnifier.png" />
+    <None Include="Resources\node-select-next.png" />
+    <None Include="Resources\node-select-previous.png" />
+    <None Include="Resources\node.png" />
+    <None Include="Resources\node-select-all.png" />
     <None Include="Resources\property-export.png" />
     <None Include="Resources\cross-circle.png" />
+    <None Include="Resources\database.png" />
+    <None Include="Resources\document-search-result.png" />
+    <None Include="Resources\drive-download.png" />
+    <None Include="Resources\book-question.png" />
+    <None Include="Resources\git.png" />
     <Content Include="Resources\grt.ico" />
     <None Include="Resources\table-export.png" />
     <None Include="Resources\document--minus.png" />

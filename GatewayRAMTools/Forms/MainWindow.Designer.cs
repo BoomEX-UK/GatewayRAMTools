@@ -44,6 +44,7 @@
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.viewSelectedPartitionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exportRAWRAMDumpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cheatFinderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
@@ -91,6 +92,7 @@
             // 
             // addFilesToolStripMenuItem
             // 
+            this.addFilesToolStripMenuItem.Image = global::GatewayRAMTools.Properties.Resources.document__plus;
             this.addFilesToolStripMenuItem.Name = "addFilesToolStripMenuItem";
             this.addFilesToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.addFilesToolStripMenuItem.Text = "Add Files..";
@@ -103,6 +105,7 @@
             // 
             // exitToolStripMenuItem
             // 
+            this.exitToolStripMenuItem.Image = global::GatewayRAMTools.Properties.Resources.cross_circle;
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.exitToolStripMenuItem.Text = "Exit";
@@ -114,7 +117,8 @@
             this.selectToolStripMenuItem,
             this.toolStripSeparator2,
             this.viewSelectedPartitionToolStripMenuItem,
-            this.exportRAWRAMDumpToolStripMenuItem});
+            this.exportRAWRAMDumpToolStripMenuItem,
+            this.cheatFinderToolStripMenuItem});
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
             this.toolsToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
             this.toolsToolStripMenuItem.Text = "Tools";
@@ -127,12 +131,14 @@
             this.toolStripSeparator4,
             this.allGatewayToolStripMenuItem,
             this.allRAWToolStripMenuItem});
+            this.selectToolStripMenuItem.Image = global::GatewayRAMTools.Properties.Resources.node_magnifier;
             this.selectToolStripMenuItem.Name = "selectToolStripMenuItem";
             this.selectToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
             this.selectToolStripMenuItem.Text = "Select";
             // 
             // allToolStripMenuItem
             // 
+            this.allToolStripMenuItem.Image = global::GatewayRAMTools.Properties.Resources.node_select_all;
             this.allToolStripMenuItem.Name = "allToolStripMenuItem";
             this.allToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.allToolStripMenuItem.Text = "All";
@@ -140,6 +146,7 @@
             // 
             // noneToolStripMenuItem
             // 
+            this.noneToolStripMenuItem.Image = global::GatewayRAMTools.Properties.Resources.node;
             this.noneToolStripMenuItem.Name = "noneToolStripMenuItem";
             this.noneToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.noneToolStripMenuItem.Text = "None";
@@ -152,6 +159,7 @@
             // 
             // allGatewayToolStripMenuItem
             // 
+            this.allGatewayToolStripMenuItem.Image = global::GatewayRAMTools.Properties.Resources.node_select_previous;
             this.allGatewayToolStripMenuItem.Name = "allGatewayToolStripMenuItem";
             this.allGatewayToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.allGatewayToolStripMenuItem.Text = "All Gateway";
@@ -159,6 +167,7 @@
             // 
             // allRAWToolStripMenuItem
             // 
+            this.allRAWToolStripMenuItem.Image = global::GatewayRAMTools.Properties.Resources.node_select_next;
             this.allRAWToolStripMenuItem.Name = "allRAWToolStripMenuItem";
             this.allRAWToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.allRAWToolStripMenuItem.Text = "All RAW";
@@ -172,6 +181,7 @@
             // viewSelectedPartitionToolStripMenuItem
             // 
             this.viewSelectedPartitionToolStripMenuItem.Enabled = false;
+            this.viewSelectedPartitionToolStripMenuItem.Image = global::GatewayRAMTools.Properties.Resources.database;
             this.viewSelectedPartitionToolStripMenuItem.Name = "viewSelectedPartitionToolStripMenuItem";
             this.viewSelectedPartitionToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
             this.viewSelectedPartitionToolStripMenuItem.Text = "View Selected Partition";
@@ -179,10 +189,19 @@
             // 
             // exportRAWRAMDumpToolStripMenuItem
             // 
+            this.exportRAWRAMDumpToolStripMenuItem.Image = global::GatewayRAMTools.Properties.Resources.drive_download;
             this.exportRAWRAMDumpToolStripMenuItem.Name = "exportRAWRAMDumpToolStripMenuItem";
             this.exportRAWRAMDumpToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
             this.exportRAWRAMDumpToolStripMenuItem.Text = "Export RAW RAM Dump";
             this.exportRAWRAMDumpToolStripMenuItem.Click += new System.EventHandler(this.exportRAWRAMDumpToolStripMenuItem_Click);
+            // 
+            // cheatFinderToolStripMenuItem
+            // 
+            this.cheatFinderToolStripMenuItem.Image = global::GatewayRAMTools.Properties.Resources.document_search_result;
+            this.cheatFinderToolStripMenuItem.Name = "cheatFinderToolStripMenuItem";
+            this.cheatFinderToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.cheatFinderToolStripMenuItem.Text = "Fixed Address Search";
+            this.cheatFinderToolStripMenuItem.Click += new System.EventHandler(this.cheatFinderToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
@@ -197,6 +216,7 @@
             // 
             // aboutToolStripMenuItem
             // 
+            this.aboutToolStripMenuItem.Image = global::GatewayRAMTools.Properties.Resources.stickman_smiley_question;
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.aboutToolStripMenuItem.Text = "About";
@@ -209,6 +229,7 @@
             // 
             // supportToolStripMenuItem
             // 
+            this.supportToolStripMenuItem.Image = global::GatewayRAMTools.Properties.Resources.book_question;
             this.supportToolStripMenuItem.Name = "supportToolStripMenuItem";
             this.supportToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.supportToolStripMenuItem.Text = "Support";
@@ -216,6 +237,7 @@
             // 
             // projectHomepageToolStripMenuItem
             // 
+            this.projectHomepageToolStripMenuItem.Image = global::GatewayRAMTools.Properties.Resources.git;
             this.projectHomepageToolStripMenuItem.Name = "projectHomepageToolStripMenuItem";
             this.projectHomepageToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.projectHomepageToolStripMenuItem.Text = "Project Homepage";
@@ -327,6 +349,7 @@
             this.pnlProgress.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnlProgress.Location = new System.Drawing.Point(0, 219);
             this.pnlProgress.Name = "pnlProgress";
+            this.pnlProgress.Padding = new System.Windows.Forms.Padding(6, 0, 6, 6);
             this.pnlProgress.Size = new System.Drawing.Size(384, 20);
             this.pnlProgress.TabIndex = 4;
             this.pnlProgress.Visible = false;
@@ -334,9 +357,9 @@
             // pbar
             // 
             this.pbar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbar.Location = new System.Drawing.Point(0, 0);
+            this.pbar.Location = new System.Drawing.Point(6, 0);
             this.pbar.Name = "pbar";
-            this.pbar.Size = new System.Drawing.Size(384, 20);
+            this.pbar.Size = new System.Drawing.Size(372, 14);
             this.pbar.TabIndex = 0;
             // 
             // frmMain
@@ -400,6 +423,7 @@
         private System.Windows.Forms.ToolStripMenuItem allRAWToolStripMenuItem;
         private System.Windows.Forms.Panel pnlProgress;
         private System.Windows.Forms.ProgressBar pbar;
+        private System.Windows.Forms.ToolStripMenuItem cheatFinderToolStripMenuItem;
     }
 }
 
