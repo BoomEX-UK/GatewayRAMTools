@@ -215,7 +215,7 @@
             this.comboType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboType.FormattingEnabled = true;
             this.comboType.Items.AddRange(new object[] {
-            "Fixed Value",
+            "Exact Value",
             "Unknown Initial Value"});
             this.comboType.Location = new System.Drawing.Point(3, 3);
             this.comboType.Name = "comboType";
@@ -391,6 +391,7 @@
             this.colFile,
             this.colFoundIn});
             this.lstResults.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lstResults.FullRowSelect = true;
             this.lstResults.Location = new System.Drawing.Point(3, 3);
             this.lstResults.Name = "lstResults";
             this.lstResults.Size = new System.Drawing.Size(258, 376);
