@@ -208,7 +208,7 @@ namespace GatewayRAMTools
         {
             string appversion = string.Format("{0}.{1}",System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.Major, System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.Minor);
             long buildversion  = (System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.Build*100000) + System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.Revision;
-            MessageBox.Show(String.Format("Created By: xJam.es\r\nProject Started: 20th Jan 2016\r\nVersion: {0} (Build {1:X8})\r\n----------\r\nThanks To:\r\n* The Gateway Team\r\n* Maxconsole.com Forums\r\n* msparky76\r\n* makikatze\r\n* storm75x (Fort42)", appversion, buildversion),"About Gateway RAM Tools",MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show(String.Format("Created By: xJam.es\r\nProject Started: 20th Jan 2016\r\nVersion: {0} (Build {1:X8})\r\n----------\r\nThanks To:\r\n* The Gateway Team\r\n* Maxconsole.com Forums\r\n* msparky76\r\n* makikatze\r\n* storm75x (Fort42)\r\n* bernhardelbl (Be.HexEditor)", appversion, buildversion),"About Gateway RAM Tools",MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void supportToolStripMenuItem_Click(object sender, EventArgs e)

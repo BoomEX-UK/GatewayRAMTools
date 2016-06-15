@@ -38,6 +38,9 @@
     <ApplicationIcon>Resources\grt.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Be.Windows.Forms.HexBox">
+      <HintPath>bin\HexBox\Be.Windows.Forms.HexBox.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -57,11 +60,23 @@
     <Compile Include="Forms\FixedAddrWindow.Designer.cs">
       <DependentUpon>FixedAddrWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\GoToDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\GoToDialog.Designer.cs">
+      <DependentUpon>GoToDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\HeaderWindow.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\HeaderWindow.Designer.cs">
       <DependentUpon>HeaderWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\HexWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\HexWindow.Designer.cs">
+      <DependentUpon>HexWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\MainWindow.cs">
       <SubType>Form</SubType>
@@ -75,8 +90,14 @@
     <EmbeddedResource Include="Forms\FixedAddrWindow.resx">
       <DependentUpon>FixedAddrWindow.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\GoToDialog.resx">
+      <DependentUpon>GoToDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\HeaderWindow.resx">
       <DependentUpon>HeaderWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HexWindow.resx">
+      <DependentUpon>HexWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
@@ -91,6 +112,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="Lib\Be.HexEditor.exe.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -105,6 +127,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\receipt--arrow.png" />
     <None Include="Resources\stickman-smiley-question.png" />
     <None Include="Resources\node-magnifier.png" />
     <None Include="Resources\node-select-next.png" />
@@ -118,6 +141,8 @@
     <None Include="Resources\drive-download.png" />
     <None Include="Resources\book-question.png" />
     <None Include="Resources\git.png" />
+    <None Include="Resources\application-list.png" />
+    <Content Include="Lib\Be.Windows.Forms.HexBox.dll" />
     <Content Include="Resources\grt.ico" />
     <None Include="Resources\table-export.png" />
     <None Include="Resources\document--minus.png" />

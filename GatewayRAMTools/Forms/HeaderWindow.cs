@@ -81,11 +81,7 @@ namespace GatewayRAMTools
 
         private void lstHeader_DoubleClick(object sender, EventArgs e)
         {
-            if( lstHeader.FocusedItem.Index >= 0)
-            {
-                txtRAM.Text = lstHeader.FocusedItem.Text;
-                // txtFile.Text = lstHeader.FocusedItem.SubItems[2].Text;
-            }
+            hexViewerToolStripMenuItem_Click(sender, e);
         }
 
         // Toggling TextBox Changes (stops infinate loop)
@@ -163,6 +159,29 @@ namespace GatewayRAMTools
                         }
                     }
                 }
+            }
+        }
+
+        private void hexViewerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Hexwindow
+            if (lstHeader.SelectedItems[0] != null)
+            {
+                HexWindow hwin = new HexWindow();
+                hwin.filename = binfile.filePath;
+                hwin.startoffset = int.Parse(lstHeader.SelectedItems[0].SubItems[2].Text,System.Globalization.NumberStyles.HexNumber);
+                hwin.offsetsize = int.Parse(lstHeader.SelectedItems[0].SubItems[3].Text, System.Globalization.NumberStyles.HexNumber);
+                hwin.ramoffset = int.Parse(lstHeader.SelectedItems[0].SubItems[0].Text, System.Globalization.NumberStyles.HexNumber);
+                hwin.Show();
+            }
+        }
+
+        private void lstHeader_Click(object sender, EventArgs e)
+        {
+            if (lstHeader.FocusedItem.Index >= 0)
+            {
+                txtRAM.Text = lstHeader.FocusedItem.Text;
+                // txtFile.Text = lstHeader.FocusedItem.SubItems[2].Text;
             }
         }
     }

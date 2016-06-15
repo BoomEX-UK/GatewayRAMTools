@@ -213,6 +213,7 @@
             this.comboType.Cursor = System.Windows.Forms.Cursors.Hand;
             this.comboType.Dock = System.Windows.Forms.DockStyle.Fill;
             this.comboType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboType.Enabled = false;
             this.comboType.FormattingEnabled = true;
             this.comboType.Items.AddRange(new object[] {
             "Exact Value",
@@ -417,6 +418,7 @@
             // colFoundIn
             // 
             this.colFoundIn.Text = "# Files";
+            this.colFoundIn.Width = 55;
             // 
             // progSearch
             // 
