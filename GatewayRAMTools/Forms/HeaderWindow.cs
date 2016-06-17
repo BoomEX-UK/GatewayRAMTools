@@ -42,6 +42,7 @@ namespace GatewayRAMTools
                 lsi.SubItems.Add(binfile.memRegions[i][1].ToString("X8"));
                 lsi.SubItems.Add(binfile.memRegions[i][2].ToString("X8"));
                 lsi.SubItems.Add(binfile.memRegions[i][3].ToString("X8"));
+                lsi.Tag = i;
             }
             resizeColumns();
         }
@@ -168,10 +169,11 @@ namespace GatewayRAMTools
             if (lstHeader.SelectedItems[0] != null)
             {
                 HexWindow hwin = new HexWindow();
-                hwin.filename = binfile.filePath;
-                hwin.startoffset = int.Parse(lstHeader.SelectedItems[0].SubItems[2].Text,System.Globalization.NumberStyles.HexNumber);
-                hwin.offsetsize = int.Parse(lstHeader.SelectedItems[0].SubItems[3].Text, System.Globalization.NumberStyles.HexNumber);
-                hwin.ramoffset = int.Parse(lstHeader.SelectedItems[0].SubItems[0].Text, System.Globalization.NumberStyles.HexNumber);
+                hwin.rDump = binfile;
+                hwin.memRegion = (int)lstHeader.SelectedItems[0].Tag;
+                //hwin.startoffset = int.Parse(lstHeader.SelectedItems[0].SubItems[2].Text,System.Globalization.NumberStyles.HexNumber);
+                //hwin.offsetsize = int.Parse(lstHeader.SelectedItems[0].SubItems[3].Text, System.Globalization.NumberStyles.HexNumber);
+                //hwin.ramoffset = int.Parse(lstHeader.SelectedItems[0].SubItems[0].Text, System.Globalization.NumberStyles.HexNumber);
                 hwin.Show();
             }
         }

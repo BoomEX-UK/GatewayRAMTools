@@ -270,5 +270,44 @@ namespace GatewayRAMTools
                 else MessageBox.Show("You must have at least 1 RAM Dump ticked before searching.", "Cheat Finder Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+            DateTime dt = new DateTime();
+            if ((dt.Day == 1) && (dt.Month == 4)) pointerAddressSearchToolStripMenuItem.Image = Properties.Resources.hand_finger;
+        }
+
+        private void pointerAddressSearchToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            List<GWFileHeader> cheatFiles = new List<GWFileHeader>();
+            GWFunctions gwf = new GWFunctions();
+            string SHAmatch = null;
+            bool doMatch = true;
+
+            foreach (ListViewItem lvi in lstFiles.CheckedItems)
+            {
+                cheatFiles.Add(gwf.buildFromDump(lvi.SubItems[3].Text));
+                if (SHAmatch == null)
+                {
+                    SHAmatch = cheatFiles[cheatFiles.Count - 1].headerSHA1;
+                }
+                else
+                {
+                    if (SHAmatch != cheatFiles[cheatFiles.Count - 1].headerSHA1) doMatch = false;
+                }
+            }
+
+            if ((cheatFiles.Count > 0) && doMatch)
+            {
+                PointerAddrWindow paddwin = new PointerAddrWindow();
+                paddwin.ramDumps = cheatFiles;
+                paddwin.Show();
+            }
+            else
+            {
+                if (!doMatch) MessageBox.Show("The layout of your RAM Dumps do not match. You cannot mix RAW/Gateway & all RAM dumps selected must be from the same game.", "Cheat Finder Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                else MessageBox.Show("You must have at least 1 RAM Dump ticked before searching.", "Cheat Finder Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
     }
 }

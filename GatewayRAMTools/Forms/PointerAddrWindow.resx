@@ -117,68 +117,38 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="git" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\git.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="database" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\database.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="node_select_previous" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\node-select-previous.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="node_magnifier" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\node-magnifier.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="node_select_next" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\node-select-next.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="property_export" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\property-export.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="document_minus" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\document--minus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="node" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\node.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="receipt_arrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\receipt--arrow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="book_question" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\book-question.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="cross_circle" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cross-circle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="stickman_smiley_question" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\stickman-smiley-question.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="application_list" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\application-list.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="hand_finger" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\hand-finger.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="document_plus" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\document--plus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="document_search_result" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\document-search-result.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="hand_point_090" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\hand-point-090.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="node_select_all" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\node-select-all.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="drive_download" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\drive-download.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="table_export" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\table-export.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="script-text" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\script-text.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <metadata name="colFile.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="colAddress.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="mnuResults.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAEBAAAAAAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAQAQAAAAAAAAAAAAAAAAAAAAA
+        AAD///8B////AQAAAAUAAAALAAAAEQAAABcAAAAbAAAAGwAAABsAAAAbAAAAGwAAABkAAAARAAAACf//
+        /wH///8B////AQAAAAMAAAALAAAAFwAAACMAJEdhAEGDwQBChMkAQoTJAEKEyQBBg8EAI0ZhAAAAIQAA
+        ABH///8B////Af///wH///8B////Af///wEBI0YLAUWKuWGZz/F1qNr/a57Q/2ibzf9RiL/xAkaKuwE0
+        aBX///8B////Af///wH///8B////Af///wH///8BAUqSXRZan8WAs+X/cqXX/2qdz/9om83/a57Q/y1t
+        rdUBSpJh////Af///wH///8B////Af///wH///8BAk+bWRRcpL13rOD3fK/h/3Om2P9qnc//aJvN/2ue
+        0P9bk8rtAk6ak////wH///8B////Af///wH///8BAlKiVRhjrrWAs+T/gLPk/36x4v90p9n/ap3P/2ib
+        zf9sn9D/caXX+wJSoaX///8B////Af///wH///8BAlSmRxllsbOLvu3/bJ/R/4O25v+BtOT/dqna/2qd
+        z/9om83/bJ/R/3ap2v8CVKWn////Af///wH///8B////AQNWqaORxPH/jL/t/xZdpbePwu//hbjn/3+y
+        4f94q9z/d6rb/3ms3f+DtuX/A1apo////wH///8B////Af///wEDWKyfmMv1/xtquKsCTZmrms33/5rN
+        9/+azff/ms33/5rN9/+azff/ms33/wNYrJ////8B////Af///wH///8BA1qwZwNasJsDWrBPA1Gfp53Q
+        +f+Mv+3/ndD5/2+n2+2d0Pn/RoXC253Q+f8DWrCb////Af///wH///8B////Af///wH///8B////AQNY
+        rZ2g0/r/Ak+csaDT+v8CT5yxoNP6/wJPnLGSyPTzA1yzmf///wH///8B////Af///wH///8B////Af//
+        /wEDXbaVo9b8/wJSoquVy/bzAlKiq1OZ2ckCUqKrA122lQNdtkv///8B////Af///wH///8B////Af//
+        /wH///8BBF+5k6bZ/f8DVailBF+5kwNVqJEEXrhJAlSmP////wH///8B////Af///wH///8B////Af//
+        /wH///8B////AQRgvI+o2/7/A1iun////wH///8B////Af///wH///8B////Af///wH///8B////Af//
+        /wH///8B////Af///wEEYb6Nm9L68QNbs5n///8B////Af///wH///8B////Af///wH///8B////Af//
+        /wH///8B////Af///wH///8BBGLARwRiwIsEXrhL////Af///wH///8B////Af///wH///8B////Af//
+        /wH///8BAAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA
+        //8AAP//AAD//w==
+</value>
   </data>
 </root>

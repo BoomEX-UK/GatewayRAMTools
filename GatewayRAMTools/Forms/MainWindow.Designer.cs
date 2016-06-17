@@ -31,28 +31,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addFilesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.selectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.allToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.noneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.allGatewayToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.allRAWToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.viewSelectedPartitionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exportRAWRAMDumpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cheatFinderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.supportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.projectHomepageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlButtons = new System.Windows.Forms.Panel();
-            this.btnRemove = new System.Windows.Forms.Button();
-            this.btnAddFiles = new System.Windows.Forms.Button();
             this.pnlListView = new System.Windows.Forms.Panel();
             this.lstFiles = new System.Windows.Forms.ListView();
             this.filename = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -62,6 +46,23 @@
             this.dgAddFiles = new System.Windows.Forms.OpenFileDialog();
             this.pnlProgress = new System.Windows.Forms.Panel();
             this.pbar = new System.Windows.Forms.ProgressBar();
+            this.btnRemove = new System.Windows.Forms.Button();
+            this.btnAddFiles = new System.Windows.Forms.Button();
+            this.addFilesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.selectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.allToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.noneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.allGatewayToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.allRAWToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewSelectedPartitionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exportRAWRAMDumpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cheatFinderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pointerAddressSearchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.supportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.projectHomepageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.pnlButtons.SuspendLayout();
             this.pnlListView.SuspendLayout();
@@ -90,26 +91,10 @@
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
             // 
-            // addFilesToolStripMenuItem
-            // 
-            this.addFilesToolStripMenuItem.Image = global::GatewayRAMTools.Properties.Resources.document__plus;
-            this.addFilesToolStripMenuItem.Name = "addFilesToolStripMenuItem";
-            this.addFilesToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
-            this.addFilesToolStripMenuItem.Text = "Add Files..";
-            this.addFilesToolStripMenuItem.Click += new System.EventHandler(this.addFilesToolStripMenuItem_Click);
-            // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(125, 6);
-            // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.Image = global::GatewayRAMTools.Properties.Resources.cross_circle;
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
-            this.exitToolStripMenuItem.Text = "Exit";
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // toolsToolStripMenuItem
             // 
@@ -118,90 +103,16 @@
             this.toolStripSeparator2,
             this.viewSelectedPartitionToolStripMenuItem,
             this.exportRAWRAMDumpToolStripMenuItem,
-            this.cheatFinderToolStripMenuItem});
+            this.cheatFinderToolStripMenuItem,
+            this.pointerAddressSearchToolStripMenuItem});
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
             this.toolsToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
             this.toolsToolStripMenuItem.Text = "Tools";
-            // 
-            // selectToolStripMenuItem
-            // 
-            this.selectToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.allToolStripMenuItem,
-            this.noneToolStripMenuItem,
-            this.toolStripSeparator4,
-            this.allGatewayToolStripMenuItem,
-            this.allRAWToolStripMenuItem});
-            this.selectToolStripMenuItem.Image = global::GatewayRAMTools.Properties.Resources.node_magnifier;
-            this.selectToolStripMenuItem.Name = "selectToolStripMenuItem";
-            this.selectToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
-            this.selectToolStripMenuItem.Text = "Select";
-            // 
-            // allToolStripMenuItem
-            // 
-            this.allToolStripMenuItem.Image = global::GatewayRAMTools.Properties.Resources.node_select_all;
-            this.allToolStripMenuItem.Name = "allToolStripMenuItem";
-            this.allToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
-            this.allToolStripMenuItem.Text = "All";
-            this.allToolStripMenuItem.Click += new System.EventHandler(this.allToolStripMenuItem_Click);
-            // 
-            // noneToolStripMenuItem
-            // 
-            this.noneToolStripMenuItem.Image = global::GatewayRAMTools.Properties.Resources.node;
-            this.noneToolStripMenuItem.Name = "noneToolStripMenuItem";
-            this.noneToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
-            this.noneToolStripMenuItem.Text = "None";
-            this.noneToolStripMenuItem.Click += new System.EventHandler(this.noneToolStripMenuItem_Click);
-            // 
-            // toolStripSeparator4
-            // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(133, 6);
-            // 
-            // allGatewayToolStripMenuItem
-            // 
-            this.allGatewayToolStripMenuItem.Image = global::GatewayRAMTools.Properties.Resources.node_select_previous;
-            this.allGatewayToolStripMenuItem.Name = "allGatewayToolStripMenuItem";
-            this.allGatewayToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
-            this.allGatewayToolStripMenuItem.Text = "All Gateway";
-            this.allGatewayToolStripMenuItem.Click += new System.EventHandler(this.allRAWToolStripMenuItem_Click);
-            // 
-            // allRAWToolStripMenuItem
-            // 
-            this.allRAWToolStripMenuItem.Image = global::GatewayRAMTools.Properties.Resources.node_select_next;
-            this.allRAWToolStripMenuItem.Name = "allRAWToolStripMenuItem";
-            this.allRAWToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
-            this.allRAWToolStripMenuItem.Text = "All RAW";
-            this.allRAWToolStripMenuItem.Click += new System.EventHandler(this.allRAWToolStripMenuItem_Click_1);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(197, 6);
-            // 
-            // viewSelectedPartitionToolStripMenuItem
-            // 
-            this.viewSelectedPartitionToolStripMenuItem.Enabled = false;
-            this.viewSelectedPartitionToolStripMenuItem.Image = global::GatewayRAMTools.Properties.Resources.database;
-            this.viewSelectedPartitionToolStripMenuItem.Name = "viewSelectedPartitionToolStripMenuItem";
-            this.viewSelectedPartitionToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
-            this.viewSelectedPartitionToolStripMenuItem.Text = "View Selected Partition";
-            this.viewSelectedPartitionToolStripMenuItem.Click += new System.EventHandler(this.viewSelectedPartitionToolStripMenuItem_Click);
-            // 
-            // exportRAWRAMDumpToolStripMenuItem
-            // 
-            this.exportRAWRAMDumpToolStripMenuItem.Image = global::GatewayRAMTools.Properties.Resources.drive_download;
-            this.exportRAWRAMDumpToolStripMenuItem.Name = "exportRAWRAMDumpToolStripMenuItem";
-            this.exportRAWRAMDumpToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
-            this.exportRAWRAMDumpToolStripMenuItem.Text = "Export RAW RAM Dump";
-            this.exportRAWRAMDumpToolStripMenuItem.Click += new System.EventHandler(this.exportRAWRAMDumpToolStripMenuItem_Click);
-            // 
-            // cheatFinderToolStripMenuItem
-            // 
-            this.cheatFinderToolStripMenuItem.Image = global::GatewayRAMTools.Properties.Resources.document_search_result;
-            this.cheatFinderToolStripMenuItem.Name = "cheatFinderToolStripMenuItem";
-            this.cheatFinderToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
-            this.cheatFinderToolStripMenuItem.Text = "Fixed Address Search";
-            this.cheatFinderToolStripMenuItem.Click += new System.EventHandler(this.cheatFinderToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
@@ -214,34 +125,10 @@
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.helpToolStripMenuItem.Text = "Help";
             // 
-            // aboutToolStripMenuItem
-            // 
-            this.aboutToolStripMenuItem.Image = global::GatewayRAMTools.Properties.Resources.stickman_smiley_question;
-            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
-            this.aboutToolStripMenuItem.Text = "About";
-            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
-            // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(170, 6);
-            // 
-            // supportToolStripMenuItem
-            // 
-            this.supportToolStripMenuItem.Image = global::GatewayRAMTools.Properties.Resources.book_question;
-            this.supportToolStripMenuItem.Name = "supportToolStripMenuItem";
-            this.supportToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
-            this.supportToolStripMenuItem.Text = "Support";
-            this.supportToolStripMenuItem.Click += new System.EventHandler(this.supportToolStripMenuItem_Click);
-            // 
-            // projectHomepageToolStripMenuItem
-            // 
-            this.projectHomepageToolStripMenuItem.Image = global::GatewayRAMTools.Properties.Resources.git;
-            this.projectHomepageToolStripMenuItem.Name = "projectHomepageToolStripMenuItem";
-            this.projectHomepageToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
-            this.projectHomepageToolStripMenuItem.Text = "Project Homepage";
-            this.projectHomepageToolStripMenuItem.Click += new System.EventHandler(this.projectHomepageToolStripMenuItem_Click);
             // 
             // pnlButtons
             // 
@@ -253,37 +140,6 @@
             this.pnlButtons.Padding = new System.Windows.Forms.Padding(6, 0, 6, 6);
             this.pnlButtons.Size = new System.Drawing.Size(384, 37);
             this.pnlButtons.TabIndex = 1;
-            // 
-            // btnRemove
-            // 
-            this.btnRemove.AutoSize = true;
-            this.btnRemove.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRemove.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnRemove.Enabled = false;
-            this.btnRemove.Image = global::GatewayRAMTools.Properties.Resources.document__minus;
-            this.btnRemove.Location = new System.Drawing.Point(268, 0);
-            this.btnRemove.Name = "btnRemove";
-            this.btnRemove.Size = new System.Drawing.Size(110, 31);
-            this.btnRemove.TabIndex = 1;
-            this.btnRemove.Text = "Remove Ticked";
-            this.btnRemove.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnRemove.UseVisualStyleBackColor = true;
-            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
-            // 
-            // btnAddFiles
-            // 
-            this.btnAddFiles.AutoSize = true;
-            this.btnAddFiles.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddFiles.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnAddFiles.Image = global::GatewayRAMTools.Properties.Resources.document__plus;
-            this.btnAddFiles.Location = new System.Drawing.Point(6, 0);
-            this.btnAddFiles.Name = "btnAddFiles";
-            this.btnAddFiles.Size = new System.Drawing.Size(110, 31);
-            this.btnAddFiles.TabIndex = 0;
-            this.btnAddFiles.Text = "Add Files..";
-            this.btnAddFiles.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAddFiles.UseVisualStyleBackColor = true;
-            this.btnAddFiles.Click += new System.EventHandler(this.btnAddFiles_Click);
             // 
             // pnlListView
             // 
@@ -362,6 +218,160 @@
             this.pbar.Size = new System.Drawing.Size(372, 14);
             this.pbar.TabIndex = 0;
             // 
+            // btnRemove
+            // 
+            this.btnRemove.AutoSize = true;
+            this.btnRemove.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRemove.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnRemove.Enabled = false;
+            this.btnRemove.Image = global::GatewayRAMTools.Properties.Resources.document_minus;
+            this.btnRemove.Location = new System.Drawing.Point(268, 0);
+            this.btnRemove.Name = "btnRemove";
+            this.btnRemove.Size = new System.Drawing.Size(110, 31);
+            this.btnRemove.TabIndex = 1;
+            this.btnRemove.Text = "Remove Ticked";
+            this.btnRemove.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnRemove.UseVisualStyleBackColor = true;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
+            // 
+            // btnAddFiles
+            // 
+            this.btnAddFiles.AutoSize = true;
+            this.btnAddFiles.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddFiles.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnAddFiles.Image = global::GatewayRAMTools.Properties.Resources.document_plus;
+            this.btnAddFiles.Location = new System.Drawing.Point(6, 0);
+            this.btnAddFiles.Name = "btnAddFiles";
+            this.btnAddFiles.Size = new System.Drawing.Size(110, 31);
+            this.btnAddFiles.TabIndex = 0;
+            this.btnAddFiles.Text = "Add Files..";
+            this.btnAddFiles.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAddFiles.UseVisualStyleBackColor = true;
+            this.btnAddFiles.Click += new System.EventHandler(this.btnAddFiles_Click);
+            // 
+            // addFilesToolStripMenuItem
+            // 
+            this.addFilesToolStripMenuItem.Image = global::GatewayRAMTools.Properties.Resources.document_plus;
+            this.addFilesToolStripMenuItem.Name = "addFilesToolStripMenuItem";
+            this.addFilesToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
+            this.addFilesToolStripMenuItem.Text = "Add Files..";
+            this.addFilesToolStripMenuItem.Click += new System.EventHandler(this.addFilesToolStripMenuItem_Click);
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Image = global::GatewayRAMTools.Properties.Resources.cross_circle;
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
+            // selectToolStripMenuItem
+            // 
+            this.selectToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.allToolStripMenuItem,
+            this.noneToolStripMenuItem,
+            this.toolStripSeparator4,
+            this.allGatewayToolStripMenuItem,
+            this.allRAWToolStripMenuItem});
+            this.selectToolStripMenuItem.Image = global::GatewayRAMTools.Properties.Resources.node_magnifier;
+            this.selectToolStripMenuItem.Name = "selectToolStripMenuItem";
+            this.selectToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.selectToolStripMenuItem.Text = "Select";
+            // 
+            // allToolStripMenuItem
+            // 
+            this.allToolStripMenuItem.Image = global::GatewayRAMTools.Properties.Resources.node_select_all;
+            this.allToolStripMenuItem.Name = "allToolStripMenuItem";
+            this.allToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.allToolStripMenuItem.Text = "All";
+            this.allToolStripMenuItem.Click += new System.EventHandler(this.allToolStripMenuItem_Click);
+            // 
+            // noneToolStripMenuItem
+            // 
+            this.noneToolStripMenuItem.Image = global::GatewayRAMTools.Properties.Resources.node;
+            this.noneToolStripMenuItem.Name = "noneToolStripMenuItem";
+            this.noneToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.noneToolStripMenuItem.Text = "None";
+            this.noneToolStripMenuItem.Click += new System.EventHandler(this.noneToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(133, 6);
+            // 
+            // allGatewayToolStripMenuItem
+            // 
+            this.allGatewayToolStripMenuItem.Image = global::GatewayRAMTools.Properties.Resources.node_select_previous;
+            this.allGatewayToolStripMenuItem.Name = "allGatewayToolStripMenuItem";
+            this.allGatewayToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.allGatewayToolStripMenuItem.Text = "All Gateway";
+            this.allGatewayToolStripMenuItem.Click += new System.EventHandler(this.allRAWToolStripMenuItem_Click);
+            // 
+            // allRAWToolStripMenuItem
+            // 
+            this.allRAWToolStripMenuItem.Image = global::GatewayRAMTools.Properties.Resources.node_select_next;
+            this.allRAWToolStripMenuItem.Name = "allRAWToolStripMenuItem";
+            this.allRAWToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.allRAWToolStripMenuItem.Text = "All RAW";
+            this.allRAWToolStripMenuItem.Click += new System.EventHandler(this.allRAWToolStripMenuItem_Click_1);
+            // 
+            // viewSelectedPartitionToolStripMenuItem
+            // 
+            this.viewSelectedPartitionToolStripMenuItem.Enabled = false;
+            this.viewSelectedPartitionToolStripMenuItem.Image = global::GatewayRAMTools.Properties.Resources.database;
+            this.viewSelectedPartitionToolStripMenuItem.Name = "viewSelectedPartitionToolStripMenuItem";
+            this.viewSelectedPartitionToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.viewSelectedPartitionToolStripMenuItem.Text = "View Selected Partition";
+            this.viewSelectedPartitionToolStripMenuItem.Click += new System.EventHandler(this.viewSelectedPartitionToolStripMenuItem_Click);
+            // 
+            // exportRAWRAMDumpToolStripMenuItem
+            // 
+            this.exportRAWRAMDumpToolStripMenuItem.Image = global::GatewayRAMTools.Properties.Resources.drive_download;
+            this.exportRAWRAMDumpToolStripMenuItem.Name = "exportRAWRAMDumpToolStripMenuItem";
+            this.exportRAWRAMDumpToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.exportRAWRAMDumpToolStripMenuItem.Text = "Export RAW RAM Dump";
+            this.exportRAWRAMDumpToolStripMenuItem.Click += new System.EventHandler(this.exportRAWRAMDumpToolStripMenuItem_Click);
+            // 
+            // cheatFinderToolStripMenuItem
+            // 
+            this.cheatFinderToolStripMenuItem.Image = global::GatewayRAMTools.Properties.Resources.document_search_result;
+            this.cheatFinderToolStripMenuItem.Name = "cheatFinderToolStripMenuItem";
+            this.cheatFinderToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.cheatFinderToolStripMenuItem.Text = "Fixed Address Search";
+            this.cheatFinderToolStripMenuItem.Click += new System.EventHandler(this.cheatFinderToolStripMenuItem_Click);
+            // 
+            // pointerAddressSearchToolStripMenuItem
+            // 
+            this.pointerAddressSearchToolStripMenuItem.Image = global::GatewayRAMTools.Properties.Resources.hand_point_090;
+            this.pointerAddressSearchToolStripMenuItem.Name = "pointerAddressSearchToolStripMenuItem";
+            this.pointerAddressSearchToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.pointerAddressSearchToolStripMenuItem.Text = "Pointer Address Search";
+            this.pointerAddressSearchToolStripMenuItem.Click += new System.EventHandler(this.pointerAddressSearchToolStripMenuItem_Click);
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Image = global::GatewayRAMTools.Properties.Resources.stickman_smiley_question;
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.aboutToolStripMenuItem.Text = "About";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
+            // 
+            // supportToolStripMenuItem
+            // 
+            this.supportToolStripMenuItem.Image = global::GatewayRAMTools.Properties.Resources.book_question;
+            this.supportToolStripMenuItem.Name = "supportToolStripMenuItem";
+            this.supportToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.supportToolStripMenuItem.Text = "Support";
+            this.supportToolStripMenuItem.Click += new System.EventHandler(this.supportToolStripMenuItem_Click);
+            // 
+            // projectHomepageToolStripMenuItem
+            // 
+            this.projectHomepageToolStripMenuItem.Image = global::GatewayRAMTools.Properties.Resources.git;
+            this.projectHomepageToolStripMenuItem.Name = "projectHomepageToolStripMenuItem";
+            this.projectHomepageToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.projectHomepageToolStripMenuItem.Text = "Project Homepage";
+            this.projectHomepageToolStripMenuItem.Click += new System.EventHandler(this.projectHomepageToolStripMenuItem_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -378,6 +388,7 @@
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gateway RAM Tools v";
+            this.Load += new System.EventHandler(this.frmMain_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.pnlButtons.ResumeLayout(false);
@@ -424,6 +435,7 @@
         private System.Windows.Forms.Panel pnlProgress;
         private System.Windows.Forms.ProgressBar pbar;
         private System.Windows.Forms.ToolStripMenuItem cheatFinderToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pointerAddressSearchToolStripMenuItem;
     }
 }
 

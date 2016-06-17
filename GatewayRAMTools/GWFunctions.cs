@@ -19,7 +19,7 @@ namespace GatewayRAMTools
 		public long rawsize; // Expanded File Size (Bytes)
 		public int headerSize; // Size of Header (Bytes)
 		public int memRegionCount; // # of Header Blocks
-		public int[][] memRegions; // Header Blocks
+		public int[][] memRegions; // Header Blocks {RAM From, RAM To, File Offset, Size}
 		public int magicBit; // Validation Int
 		public string magicBit0x; // Validation Hex
         public string headerSHA1; // SHA1 Hash of Header

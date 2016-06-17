@@ -14,10 +14,11 @@ namespace GatewayRAMTools
 {
     public partial class HexWindow : Form
     {
-        public string filename;
-        public int startoffset;
-        public int offsetsize;
-        public int ramoffset;
+        public GWFileHeader rDump;
+        public int memRegion;
+        public int gotoOffset = 0;
+        public int selectLength = 0;
+        byte[] bytereader;
 
         public HexWindow()
         {
@@ -27,17 +28,23 @@ namespace GatewayRAMTools
         private void HexWindow_Load(object sender, EventArgs e)
         {
             // DynamicFileByteProvider dbfp;
-            byte[] bytereader;
-            using (BinaryReader reader = new BinaryReader(File.Open(filename, FileMode.Open)))
+            using (BinaryReader reader = new BinaryReader(File.Open(rDump.filePath, FileMode.Open)))
             {
-                reader.BaseStream.Position = startoffset;
-                bytereader = reader.ReadBytes(offsetsize);
+                reader.BaseStream.Position = rDump.memRegions[memRegion][2];
+                bytereader = reader.ReadBytes(rDump.memRegions[memRegion][3]);
             }
             DynamicByteProvider dbp = new DynamicByteProvider(bytereader);
             hexView.ByteProvider = dbp;
-            hexView.LineInfoOffset = ramoffset;
-            this.Text = "Hex View (" + ramoffset.ToString("X8") + "-" + (ramoffset + offsetsize).ToString("X8") + ")";
+            hexView.LineInfoOffset = rDump.memRegions[memRegion][0];
+            this.Text = "Hex View (" + rDump.memRegions[memRegion][0].ToString("X8") + "-" + (rDump.memRegions[memRegion][0] + rDump.memRegions[memRegion][3]).ToString("X8") + ")";
+            if(gotoOffset > 0)
+            {
+                hexView.SelectionStart = (gotoOffset - rDump.memRegions[memRegion][0]);
+                hexView.SelectionLength = selectLength;
+                hexView.ScrollByteIntoView();
+            }
             hexView_SelectionStartChanged(sender, e);
+            hexView_SelectionLengthChanged(sender, e);
             // dbp.Bytes;
         }
 
@@ -62,12 +69,49 @@ namespace GatewayRAMTools
         private void hexView_SelectionStartChanged(object sender, EventArgs e)
         {
             lblOffset.Text = "Cursor: " + (hexView.SelectionStart+hexView.LineInfoOffset).ToString("X8");
+            lblValue.Text = "";
         }
 
         private void hexView_SelectionLengthChanged(object sender, EventArgs e)
         {
             if(hexView.SelectionLength>0)
             lblOffset.Text = "Cursor: " + (hexView.SelectionStart + hexView.LineInfoOffset).ToString("X8")+"-"+ (hexView.SelectionStart + hexView.LineInfoOffset+hexView.SelectionLength).ToString("X8");
+
+            if( (hexView.SelectionLength>0) && (hexView.SelectionLength <= 4))
+            {
+                string selbase;
+                string selSvalue;
+                string selUvalue;
+                switch (hexView.SelectionLength)
+                {
+                    case 1:
+                        selbase = "8Bit";
+                        selSvalue = bytereader[(int)hexView.SelectionStart].ToString();
+                        selUvalue = bytereader[(int)hexView.SelectionStart].ToString();
+                        break;
+                    case 2:
+                        selbase = "16Bit";
+                        selSvalue = BitConverter.ToInt16(bytereader, (int)hexView.SelectionStart).ToString();
+                        selUvalue = BitConverter.ToUInt16(bytereader, (int)hexView.SelectionStart).ToString();
+                        break;
+                    case 4:
+                        selbase = "32Bit";
+                        selSvalue = BitConverter.ToInt32(bytereader, (int)hexView.SelectionStart).ToString();
+                        selUvalue = BitConverter.ToUInt32(bytereader, (int)hexView.SelectionStart).ToString();
+                        break;
+                    default:
+                        selbase = "";
+                        selSvalue = "";
+                        selUvalue = "";
+                        break;
+                }
+                if (selbase != "")
+                {
+                    lblValue.Text = selbase + ": " + selUvalue;
+                    if( selSvalue != selUvalue) lblValue.Text += " (Signed: " + selSvalue + ")";
+                }
+                else lblValue.Text = "";
+            } else lblValue.Text = "";
         }
 
         private void closeWindowToolStripMenuItem_Click(object sender, EventArgs e)

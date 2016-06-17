@@ -61,6 +61,8 @@
             this.colVal = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colFile = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colFoundIn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.menuResults = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.showInHexViewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.progSearch = new System.Windows.Forms.ProgressBar();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
@@ -73,6 +75,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridValues)).BeginInit();
             this.repResults.SuspendLayout();
             this.tableResults.SuspendLayout();
+            this.menuResults.SuspendLayout();
             this.SuspendLayout();
             // 
             // tblMain
@@ -391,6 +394,7 @@
             this.colVal,
             this.colFile,
             this.colFoundIn});
+            this.lstResults.ContextMenuStrip = this.menuResults;
             this.lstResults.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lstResults.FullRowSelect = true;
             this.lstResults.Location = new System.Drawing.Point(3, 3);
@@ -419,6 +423,21 @@
             // 
             this.colFoundIn.Text = "# Files";
             this.colFoundIn.Width = 55;
+            // 
+            // menuResults
+            // 
+            this.menuResults.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.showInHexViewToolStripMenuItem});
+            this.menuResults.Name = "menuResults";
+            this.menuResults.Size = new System.Drawing.Size(178, 48);
+            // 
+            // showInHexViewToolStripMenuItem
+            // 
+            this.showInHexViewToolStripMenuItem.Image = global::GatewayRAMTools.Properties.Resources.application_list;
+            this.showInHexViewToolStripMenuItem.Name = "showInHexViewToolStripMenuItem";
+            this.showInHexViewToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.showInHexViewToolStripMenuItem.Text = "Show In Hex Viewer";
+            this.showInHexViewToolStripMenuItem.Click += new System.EventHandler(this.showInHexViewToolStripMenuItem_Click);
             // 
             // progSearch
             // 
@@ -480,6 +499,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridValues)).EndInit();
             this.repResults.ResumeLayout(false);
             this.tableResults.ResumeLayout(false);
+            this.menuResults.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -519,5 +539,7 @@
         private System.Windows.Forms.ColumnHeader colVal;
         private System.Windows.Forms.ColumnHeader colFile;
         private System.Windows.Forms.ColumnHeader colFoundIn;
+        private System.Windows.Forms.ContextMenuStrip menuResults;
+        private System.Windows.Forms.ToolStripMenuItem showInHexViewToolStripMenuItem;
     }
 }

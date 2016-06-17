@@ -54,6 +54,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\CheatTextWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CheatTextWindow.Designer.cs">
+      <DependentUpon>CheatTextWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FixedAddrWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,9 +90,18 @@
     <Compile Include="Forms\MainWindow.Designer.cs">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\PointerAddrWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PointerAddrWindow.Designer.cs">
+      <DependentUpon>PointerAddrWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="GWFunctions.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\CheatTextWindow.resx">
+      <DependentUpon>CheatTextWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FixedAddrWindow.resx">
       <DependentUpon>FixedAddrWindow.cs</DependentUpon>
     </EmbeddedResource>
@@ -102,21 +117,24 @@
     <EmbeddedResource Include="Forms\MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PointerAddrWindow.resx">
+      <DependentUpon>PointerAddrWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="Lib\Be.HexEditor.exe.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -127,6 +145,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\script-text.png" />
+    <None Include="Resources\hand-point-090.png" />
+    <None Include="Resources\hand-finger.png" />
     <None Include="Resources\receipt--arrow.png" />
     <None Include="Resources\stickman-smiley-question.png" />
     <None Include="Resources\node-magnifier.png" />

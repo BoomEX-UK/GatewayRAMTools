@@ -117,68 +117,29 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="git" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\git.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="database" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\database.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="node_select_previous" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\node-select-previous.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="node_magnifier" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\node-magnifier.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="node_select_next" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\node-select-next.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="property_export" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\property-export.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="document_minus" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\document--minus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="node" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\node.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="receipt_arrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\receipt--arrow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="book_question" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\book-question.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="cross_circle" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cross-circle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="stickman_smiley_question" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\stickman-smiley-question.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="application_list" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\application-list.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="hand_finger" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\hand-finger.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="document_plus" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\document--plus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="document_search_result" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\document-search-result.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="hand_point_090" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\hand-point-090.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="node_select_all" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\node-select-all.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="drive_download" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\drive-download.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="table_export" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\table-export.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="script-text" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\script-text.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAEBAAAAAAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAQAQAAAAAAAAAAAAAAAAAAAAA
+        AAAJCQEvIyMDhyMjA4cjIwOHIyMDhyMjA4cjIwOHIyMDhyMjA4cjIwOHIyMDhyMjA4cYGAJdAAAAKQAA
+        ABsAAAAPEhIBK0hIK5Ht7erv/v7+//7+/v/+/v7//v7+//7+/v/+/v7//v7+//7+/v////7/pKSVwRkZ
+        AVMAAAAPAAAACf///wEjIwAra2tPq83NvP/Q0MH/1dXH/9razv/g4NX/5ubd/+zs5f/x8ez/9vby//z8
+        +f8jIwB5////Af///wH///8B////ASMjAHHx8er/7+/o//Dw6v/x8ev/8/Pt//T07//19fH/9/fy//j4
+        9P/8/Pj/IyMAcf///wH///8B////Af///wEmJgBr+/v1//b28f/29vH/9vbx//b28f/29vH/9vbx//b2
+        8f/29vH/+/v1/yYmAGv///8B////Af///wH///8BLCwBZ/r68v/z8+z/8/Ps//Pz7P/z8+z/8/Ps//Pz
+        7P/z8+z/8/Ps//r68v8sLAFn////Af///wH///8B////ATIyBmf4+O7/8PDm//Dw5v/w8Ob/8PDm//Dw
+        5v/w8Ob/8PDm//Dw5v/4+O7/MjIGZ////wH///8B////Af///wE5OQ1n9vbr/+3t4f/t7eH/7e3h/+3t
+        4f/t7eH/7e3h/+3t4f/t7eH/9vbr/zk5DWf///8B////Af///wH///8BQkIWZ/X15//q6tz/6urc/+rq
+        3P/q6tz/6urc/+rq3P/q6tz/6urc//X15/9CQhZn////Af///wH///8B////AUtLIGf09OT/6OjY/+jo
+        2P/o6Nj/6OjY/+jo2P/o6Nj/6OjY/+jo2P/09OT/S0sgZ////wH///8B////Af///wFVVSpn8/Pj/+bm
+        1v/m5tb/5ubW/+bm1v/m5tb/5ubW/+bm1v/m5tb/8/Pj/1VVKmf///8B////Af///wH///8BX180Z/Ly
+        4f/l5dT/5eXU/+Xl1P/l5dT/5eXU/+Xl1P/l5dT/5eXU//Ly4f9fXzRn////Af///wH///8B////AWlp
+        Pmf09OX/6OjZ/+jo2f/o6Nn/6OjZ/+jo2f/o6Nn/6OjZ/+jo2f/09OX/aWk+Z////wH///8B////Af//
+        /wFxcUdn/Pzz//Pz6//z8+v/8/Pr//Pz6//z8+v/8/Pr//Pz6//z8+v/+vrx/66ukqFyckgl////Af//
+        /wH///8BeHhNOcvLurP+/v3//f38//39/P/9/fz//f38//39/P/9/fz//f38//39/P/29vLtkZFue3l5
+        Th////8B////Af///wF+flQ5fn5UZ35+VGd+flRnfn5UZ35+VGd+flRnfn5UZ35+VGd+flRnfn5UZ35+
+        VGd9fVMbAAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA
+        //8AAP//AAD//w==
+</value>
   </data>
 </root>

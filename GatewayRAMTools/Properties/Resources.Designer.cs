@@ -65,7 +65,7 @@ namespace GatewayRAMTools.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap application_list {
             get {
-                object obj = ResourceManager.GetObject("application-list", resourceCulture);
+                object obj = ResourceManager.GetObject("application_list", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -75,7 +75,7 @@ namespace GatewayRAMTools.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap book_question {
             get {
-                object obj = ResourceManager.GetObject("book-question", resourceCulture);
+                object obj = ResourceManager.GetObject("book_question", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -85,7 +85,7 @@ namespace GatewayRAMTools.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap cross_circle {
             get {
-                object obj = ResourceManager.GetObject("cross-circle", resourceCulture);
+                object obj = ResourceManager.GetObject("cross_circle", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,9 +103,9 @@ namespace GatewayRAMTools.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap document__minus {
+        internal static System.Drawing.Bitmap document_minus {
             get {
-                object obj = ResourceManager.GetObject("document--minus", resourceCulture);
+                object obj = ResourceManager.GetObject("document_minus", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -113,9 +113,9 @@ namespace GatewayRAMTools.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap document__plus {
+        internal static System.Drawing.Bitmap document_plus {
             get {
-                object obj = ResourceManager.GetObject("document--plus", resourceCulture);
+                object obj = ResourceManager.GetObject("document_plus", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -125,7 +125,7 @@ namespace GatewayRAMTools.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap document_search_result {
             get {
-                object obj = ResourceManager.GetObject("document-search-result", resourceCulture);
+                object obj = ResourceManager.GetObject("document_search_result", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -135,7 +135,7 @@ namespace GatewayRAMTools.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap drive_download {
             get {
-                object obj = ResourceManager.GetObject("drive-download", resourceCulture);
+                object obj = ResourceManager.GetObject("drive_download", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -146,6 +146,26 @@ namespace GatewayRAMTools.Properties {
         internal static System.Drawing.Bitmap git {
             get {
                 object obj = ResourceManager.GetObject("git", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap hand_finger {
+            get {
+                object obj = ResourceManager.GetObject("hand_finger", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap hand_point_090 {
+            get {
+                object obj = ResourceManager.GetObject("hand_point_090", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -165,7 +185,7 @@ namespace GatewayRAMTools.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap node_magnifier {
             get {
-                object obj = ResourceManager.GetObject("node-magnifier", resourceCulture);
+                object obj = ResourceManager.GetObject("node_magnifier", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -175,7 +195,7 @@ namespace GatewayRAMTools.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap node_select_all {
             get {
-                object obj = ResourceManager.GetObject("node-select-all", resourceCulture);
+                object obj = ResourceManager.GetObject("node_select_all", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -185,7 +205,7 @@ namespace GatewayRAMTools.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap node_select_next {
             get {
-                object obj = ResourceManager.GetObject("node-select-next", resourceCulture);
+                object obj = ResourceManager.GetObject("node_select_next", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -195,7 +215,7 @@ namespace GatewayRAMTools.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap node_select_previous {
             get {
-                object obj = ResourceManager.GetObject("node-select-previous", resourceCulture);
+                object obj = ResourceManager.GetObject("node_select_previous", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -205,7 +225,7 @@ namespace GatewayRAMTools.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap property_export {
             get {
-                object obj = ResourceManager.GetObject("property-export", resourceCulture);
+                object obj = ResourceManager.GetObject("property_export", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -213,9 +233,19 @@ namespace GatewayRAMTools.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap receipt__arrow {
+        internal static System.Drawing.Bitmap receipt_arrow {
             get {
-                object obj = ResourceManager.GetObject("receipt--arrow", resourceCulture);
+                object obj = ResourceManager.GetObject("receipt_arrow", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap script_text {
+            get {
+                object obj = ResourceManager.GetObject("script-text", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -225,7 +255,7 @@ namespace GatewayRAMTools.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap stickman_smiley_question {
             get {
-                object obj = ResourceManager.GetObject("stickman-smiley-question", resourceCulture);
+                object obj = ResourceManager.GetObject("stickman_smiley_question", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -235,7 +265,7 @@ namespace GatewayRAMTools.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap table_export {
             get {
-                object obj = ResourceManager.GetObject("table-export", resourceCulture);
+                object obj = ResourceManager.GetObject("table_export", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
