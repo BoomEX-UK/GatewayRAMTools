@@ -18,6 +18,7 @@ The tool will allow you to view the Memory Regions which have been dumped and wh
 * Export a header segment
 * Fixed Address Search: (8/16/32bit Fixed Values)
 * Hex Viewer (found inside the Partition Table)
+* Pointer Address Search
 
 # Future Development
 I'll be looking to integrate further tools into this project, namely around pointer searching / multi layer pointer searching. Any comments / request or ideas are welcome.
