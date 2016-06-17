@@ -245,7 +245,7 @@ namespace GatewayRAMTools.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap script_text {
             get {
-                object obj = ResourceManager.GetObject("script-text", resourceCulture);
+                object obj = ResourceManager.GetObject("script_text", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
